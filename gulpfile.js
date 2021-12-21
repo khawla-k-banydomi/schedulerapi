@@ -46,4 +46,4 @@ gulp.task('start', function (cb) {
     cb(err);
   });
 })
-gulp.task('default', gulp.parallel('syntax', 'test'));
+gulp.task('default',['syntax', 'test']);
