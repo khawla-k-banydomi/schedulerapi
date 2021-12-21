@@ -4,10 +4,7 @@
  WORKDIR /usr/src/app
  #install dependencies
  COPY package.json /usr/src/app
- RUN npm config set unsafe-perm true
- RUN npm install
- RUN npm install gulp-cli -g
- RUN npm install gulp
+ RUN npm config set unsafe-perm true && npm install && npm install gulp-cli -g && npm install gulp
  # bundle source
  COPY . /usr/src/app
  EXPOSE 3000
