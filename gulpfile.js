@@ -46,4 +46,3 @@ gulp.task('start', function (cb) {
     cb(err);
   });
 })
-gulp.task('default',['syntax', 'test']);
