@@ -24,7 +24,6 @@
 In the second section I will try several alternatives for Travis :
 > There are several continuous integration systems and tools that can be used such as TeamCity , Jenkins and Appveyors I will concentrate on Appveyors 
 
-
 Travis CI
 Once we authorize Travis to access our repository, we have to select it to activate with each push as well we have to select the free plan at the beginning.
 
