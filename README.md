@@ -71,7 +71,6 @@ build: off
 test_script:
  - gulp test
 ```
-
 <img src="https://github.com/khawla-k-banydomi/schedulerapi/blob/main/doc/Appveyor%20Access.png" width="1000" height="500">
 
 <img src="https://github.com/khawla-k-banydomi/schedulerapi/blob/main/doc/Appveyor%20%20CI%20access.png" width="1000" height="500">
