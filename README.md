@@ -47,9 +47,9 @@ Circle CI
 
 Authorize the application into GitHub then test the repository using the available templates of the [.circleci/config.yml](https://github.com/khawla-k-banydomi/schedulerapi/blob/main/.circleci/config.yml)
 
-<img src="https://github.com/khawla-k-banydomi/schedulerapi/blob/main/doc/Circle%20Ci%20success.png" width="400" height="600">
-<img src="https://github.com/khawla-k-banydomi/schedulerapi/blob/main/doc/Circle%20CI.png" width="400" height="600">
-<img src="https://github.com/khawla-k-banydomi/schedulerapi/blob/main/doc/Circle%20CI.png" width="400" height="600">
+<img src="https://github.com/khawla-k-banydomi/schedulerapi/blob/main/doc/Circle%20Ci%20success.png" width="1000" height="200">
+<img src="https://github.com/khawla-k-banydomi/schedulerapi/blob/main/doc/Circle%20CI.png" width="1000" height="200">
+<img src="https://github.com/khawla-k-banydomi/schedulerapi/blob/main/doc/Circle%20success%20.png" width="1000" height="200">
 
 
 
