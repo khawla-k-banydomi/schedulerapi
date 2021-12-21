@@ -5,8 +5,7 @@
  #install dependencies
  COPY package.json /usr/src/app
  RUN npm install
- RUN npm install -g gulp-cli && npm link gulp && npm install gulp-run 
- 
+ RUN npm install -g gulp-cli
  USER node
  RUN gulp install
  # bundle source
