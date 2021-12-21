@@ -46,5 +46,3 @@ gulp.task('start', function (cb) {
     cb(err);
   });
 })
-
-exports.default = test;
