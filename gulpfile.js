@@ -5,6 +5,19 @@ var run = require('gulp-run');
 var nodemon = require('gulp-nodemon');
 var exec = require('child_process').exec
 
+gulp.task('install', function(){
+    return run('npm install --also=dev || echo already installed').exec();
+});
+
+gulp.task('install-production', function(){
+    return run('npm install').exec();
+});
+
+
+gulp.task('build', function(){
+    return run('echo build success').exec();
+});
+
 // test task
 gulp.task('test', async () => {
   return await console.log('Gulp Tasks are working!!');
