@@ -1,9 +1,13 @@
 language: node_js
 node_js:
-  - 12
-  - 14
-  - 15
-
+  - "8"
+cache: npm
+before_install:
+  - echo 'Installing Deps!'
+  - npm i -g
 script:
-  - gulp --tasks
-  - gulp test
+  - echo 'Build starts!!'
+  - npm i
+  - echo 'Testing!'
+  - npm run test
+  - npm run test:gulp
