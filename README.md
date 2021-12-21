@@ -48,12 +48,13 @@ Circle CI
 [Authorize](https://github.com/khawla-k-banydomi/schedulerapi/blob/main/doc/Circle%20Ci%20Authorization.png) the application into GitHub then test the repository using the available templates of the [.circleci/config.yml](https://github.com/khawla-k-banydomi/schedulerapi/blob/main/.circleci/config.yml)
 in between I make [This PR](https://github.com/khawla-k-banydomi/schedulerapi/blob/main/doc/Circle%20Ci%20PR.png) in order to accept the changes from the CircleCi account.
 
-<img src="https://github.com/khawla-k-banydomi/schedulerapi/blob/main/doc/Circle%20CI.png" width="1000" height="400">
+<img src="https://github.com/khawla-k-banydomi/schedulerapi/blob/main/doc/Circle%20CI.png" width="1000" height="500">
 
-<img src="https://github.com/khawla-k-banydomi/schedulerapi/blob/main/doc/Circle%20Ci%20success.png" width="1000" height="400">
+<img src="https://github.com/khawla-k-banydomi/schedulerapi/blob/main/doc/Circle%20Ci%20success.png" width="1000" height="500">
+
+<img src="https://github.com/khawla-k-banydomi/schedulerapi/blob/main/doc/Circle%20CI%20update%20build.png" width="1000" height="500">
 
 
-<img src="https://github.com/khawla-k-banydomi/schedulerapi/blob/main/doc/Circle%20CI%20update%20build.png" width="1000" height="400">
 
 
 
