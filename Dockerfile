@@ -11,4 +11,4 @@
  # bundle source
  COPY . /usr/src/app
  EXPOSE 3000
- CMD ["npm", "test"]
+ CMD ["gulp", "test"]
