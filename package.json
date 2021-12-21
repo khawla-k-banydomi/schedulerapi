@@ -8,7 +8,8 @@
     "test": "mocha --timeout 20000 --exit",
     "build": "gulp build",
     "test": "gulp test",
-    "watch": "gulp watch"
+    "watch": "gulp watch",
+    "test:gulp": "gulp test"  
   },
   "dependencies": {
     "babel-register": "^6.26.0",
