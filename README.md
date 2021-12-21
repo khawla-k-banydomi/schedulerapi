@@ -49,7 +49,7 @@ Authorize the application into GitHub then test the repository using the availab
 
 <img src="https://github.com/khawla-k-banydomi/schedulerapi/blob/main/doc/Circle%20Ci%20success.png" width="1000" height="200">
 <img src="https://github.com/khawla-k-banydomi/schedulerapi/blob/main/doc/Circle%20CI.png" width="1000" height="200">
-<img src="https://github.com/khawla-k-banydomi/schedulerapi/blob/main/doc/Circle%20success%20.png" width="1000" height="200">
+
 
 
 
