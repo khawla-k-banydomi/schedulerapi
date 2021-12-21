@@ -4,6 +4,7 @@
  WORKDIR /usr/src/app
  #install dependencies
  COPY package.json /usr/src/app
+ RUN npm config set unsafe-perm true
  RUN npm install
  RUN npm install gulp-cli -g
  RUN npm install gulp
