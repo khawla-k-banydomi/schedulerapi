@@ -60,8 +60,10 @@ in between I make [This PR](https://github.com/khawla-k-banydomi/schedulerapi/bl
 
 - Additional tests:
 # Appveyor 
-the following steps have be done :
+- The following steps have be done :
+
 - authorize the access to the Appveyor then Appveyor CI then start writing test scripts (I use this to test Ubuntu only)
+```
 - image: Ubuntu
 stack:
  - node 14
@@ -69,14 +71,13 @@ stack:
 build: off
 test_script:
  - gulp test
- - 
-<img src="https://github.com/khawla-k-banydomi/schedulerapi/blob/main/doc/Appveyor.png" width="1000" height="500">
+```
 
 <img src="https://github.com/khawla-k-banydomi/schedulerapi/blob/main/doc/Appveyor%20Access.png" width="1000" height="500">
 
 <img src="https://github.com/khawla-k-banydomi/schedulerapi/blob/main/doc/Appveyor%20%20CI%20access.png" width="1000" height="500">
 
-
+<img src="https://github.com/khawla-k-banydomi/schedulerapi/blob/main/doc/Appveyor.png" width="1000" height="500">
 
 
 
