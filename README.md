@@ -37,8 +37,10 @@ Once we authorize Travis to access our repository, we have to select it to activ
 [Final Version]
 I have to test several language versions so that I have to include the follwoing in the .travis file and see the results:
 
-<img src="https://github.com/khawla-k-banydomi/schedulerapi/blob/main/doc/Travis%20languages%20test.png" width="1000" height="500">
+<img src="https://github.com/khawla-k-banydomi/schedulerapi/blob/main/doc/Travis%20languages%20test.png" width="1000" height="200">
 
-<img src="https://github.com/khawla-k-banydomi/schedulerapi/blob/main/doc/Travis%20config%20file%20.png" width="400" height="900">
+<img src="https://github.com/khawla-k-banydomi/schedulerapi/blob/main/doc/Travis%20config%20file%20.png" width="400" height="600">
+
+
 
 
