@@ -5,6 +5,8 @@ before_install:
   - npm i -g npm@7.24.2
 install:
   - npm install
+  - npm install gulp-cli -g
+  - npm install gulp
 script:
   run_test: npm run test
 
