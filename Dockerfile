@@ -5,7 +5,6 @@
  #install dependencies
  COPY package.json /usr/src/app
  RUN npm install
- RUN npm install gulp-cli -g &&  npm install gulp
  # bundle source
  COPY . /usr/src/app
  EXPOSE 3000
