@@ -78,5 +78,8 @@ test_script:
 <img src="https://github.com/khawla-k-banydomi/schedulerapi/blob/main/doc/Appveyor.png" width="1000" height="500">
 
 
+[Complete Continuous Integration milestone](https://github.com/khawla-k-banydomi/schedulerapi/milestone/7)
+
+
 
 
