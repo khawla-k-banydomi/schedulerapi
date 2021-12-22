@@ -50,6 +50,24 @@ Despite all of these I recommend to use express js since it can be considered as
 
 
 
+# Best practices
+- Setting up logs
+
+The use of logs is essential in any microservice to have a history of what happens in our application. Many and varied names exist for our language, such as Winston, loglevel, Pino, and Morgan.
+
+For our application, I try (Morgan) but I believe Pino can be considered as a good option because it has a version designed specifically for use with Koa ([koa-pino-logger](https://www.npmjs.com/package/koa-pino-logger)). but [here](https://www.npmtrends.com/express-pino-logger-vs-morgan-vs-pino) is a kind of comparison between morgan, pino and express-pino; there are [several logging tools](https://blog.logrocket.com/comparing-node-js-logging-tools/) in the context of nodejs.
+
+
+Morgan is a Node. js HTTP request logger middleware. It makes the process of logging requests to your application easier. Morgan could be thought of as a helper who generates request logs.
+
+in my application I use this:
+var logger = require('morgan');
+app.use(logger('dev'));
+
+
+
+
+
 
 
 
