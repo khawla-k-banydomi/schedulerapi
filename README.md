@@ -1,76 +1,51 @@
 
-# Continuous Integration Systems(CIs) Justification
+# Micro-services Justification
 
-- To see How I configure my Github account Please Go [Here](https://github.com/khawla-k-banydomi/ActivityScheduler/blob/main/doc/Configuration.md). 🔧
+- To see How I configure my Github account Please Go [Here](https://github.com/khawla-k-banydomi/schedulerapi/blob/main/doc/Configuration.md). 🔧
 
-- To see full descriptive document for the architecture and tools that I already and will use during the development check this [Document](https://github.com/khawla-k-banydomi/ActivityScheduler/blob/main/doc/Architecture.md) 📔
-- To see the First Milestone (hito-0) and To Take a tour around the Application That I want to develop please Go [Here](https://github.com/khawla-k-banydomi/ActivityScheduler/blob/main/doc/MS0_Description.md). 🗓️
+- To see full descriptive document for the architecture and tools that I already and will use during the development check this [Document](https://github.com/khawla-k-banydomi/schedulerapi/blob/main/doc/Architecture.md) 📔
+- To see the First Milestone (hito-0) and To Take a tour around the Application That I want to develop please Go [Here](https://github.com/khawla-k-banydomi/schedulerapi/blob/main/doc/MS0_Description.md). 🗓️
 
-- To see the Second Milestone (hito-1) and To take a tour around milestones and issues regarding the application please Go [Here](https://github.com/khawla-k-banydomi/ActivityScheduler/blob/main/doc/MS1_Specifying%20and%20planning%20the%20project.md). 🗒️
+- To see the Second Milestone (hito-1) and To take a tour around milestones and issues regarding the application please Go [Here](https://github.com/khawla-k-banydomi/schedulerapi/blob/main/doc/MS1_Specifying%20and%20planning%20the%20project.md). 🗒️
 
-- To see the Third Milestone (hito-2) and To take a tour around testing in the context of our application please Go [Here](https://github.com/khawla-k-banydomi/ActivityScheduler/blob/main/doc/MS2_Testing.md). 🗒️
+- To see the Third Milestone (hito-2) and To take a tour around testing in the context of our application please Go [Here](https://github.com/khawla-k-banydomi/schedulerapi/blob/main/doc/MS2_Testing.md). 🗒️
 
-- To see the Fourth Milestone (hito-3) and To take a tour around Docker in the context of our application please Go [Here](https://github.com/khawla-k-banydomi/ActivityScheduler/blob/main/doc/MS3_Docker-documentation.md). 🗒️
+- To see the Fourth Milestone (hito-3) and To take a tour around Docker in the context of our application please Go [Here](https://github.com/khawla-k-banydomi/schedulerapi/blob/main/doc/MS3_Docker-documentation.md). 🗒️
 
+- To see the Fifth Milestone (hito-4) and To take a tour around CI in the context of our application please Go [Here](https://github.com/khawla-k-banydomi/schedulerapi/blob/main/doc/MS4_CI.md)
+- 
 - To see the complete description of the user stories please Go [Here](https://github.com/khawla-k-banydomi/ActivityScheduler/blob/main/doc/User-Stories.md). 📓
 
-> This milestone is responsible for what so called as a continuous integration which can be defined as the process of automating the integration of the code from several contributors into a unified project.[Read more Here](https://www.atlassian.com/continuous-delivery/continuous-integration).
+> This milestone is responsible for what so called as a micro-services which can be defined as the small and a single service which comes from distributed computing architecture which in turns, connects many small services,it can be delivered via an (API) application programming interface..[Read more Here](https://www.bmc.com/blogs/microservice-vs-api/#:~:text=A%20microservice%20is%20a%20small,application%20programming%20interface%20(API)).
 
-- There are a huge number of automated tools that can be used to assert code’s correctness before integration; however in my case I am going to use two continuous integration systems in the first section which are:
+- There are a serveral frameworks for building an API and microservice in the context of nodejs language; however in my case I am going to mention these frameworks and try to concentrate and compare between two of them which might be considered as the most popular frameworks..Hapi,Restify,Expressjs,Sailsjs,Action Her,LoopBack,Feathersjs,Adonisjs,Totaljs,moleculer,Fastify, Polka and Koa can be considered are the most recent framework that can be used in building nodejs microservice API. 
 
-- Travis CI . In which I basically test the language
-- CircleCI .  In which I basically test the docker Image.
+On the one hand,Express is the most widely used and supported. In fact, the majority of other frameworks attempt to imitate their philosophy. On the other hand, because it is such a comprehensive framework, it is dependent on many modules and is somewhat heavy.
 
-In the second section I will try several alternatives for Travis :
-> There are several continuous integration systems and tools that can be used such as TeamCity , Jenkins and Appveyors I will concentrate on Appveyors 
+This is why I've decided to look into other types of frameworks, which are more "light" and minimalist (also known as microframeworks) and are likely to perform well. Also, because the only one I've tried so far is Express, and I'd like to try something new.
 
-Travis CI
-Once we authorize Travis to access our repository, we have to select it to activate with each push as well we have to select the free plan at the beginning.
+Polka and Koa are the two frameworks that have been tested. We implement the book controller paths for both to see their syntax and operation.
 
-[First Version](https://github.com/khawla-k-banydomi/schedulerapi/blob/main/.travis.yml) of the .Travis.yml file which contains only the test for the language.
+[Polka](https://npm.io/package/napim): which can be described as an extremely minimal, highly performant Express.js alternative. You can see how some routes of the book controller were implemented in the project status of this commit, specifically in index.js. This framework's documentation is available online.
 
-<img src="https://github.com/khawla-k-banydomi/schedulerapi/blob/main/doc/Travis%20Access.png" width="1000" height="400">
-<img src="https://github.com/khawla-k-banydomi/schedulerapi/blob/main/doc/Travis%20build.png" width="1000" height="400">
+[Koa js](https://koajs.com/#application): In comparison to the previous one, the same task was completed, as evidenced by the project status of this commit and, more specifically, its index.js. This framework's documentation can be found here.
 
-<img src="https://github.com/khawla-k-banydomi/schedulerapi/blob/main/doc/Travis%20after%20building.png" width="1000" height="500">
+Differences
 
-[Final Version]
-I have to test several language versions so that I have to include the follwoing in the .travis file and see the results:
+Polka adheres to the Express syntax in terms of request and response format, with an object containing request information and another containing response information that we can modify (req, res). In the case of Koa, everything is contained within an object known as the "context" (ctx).
+As we can see, there is no distinction in Polka between the router that manages the routes and the application or server (the routes hang directly from the application). In the case of Koa, if we have a module (which is not included in the framework's core) to create a router and manage the routes.
+We have a method allowedMethods () in the router Koa that will allow the application to detect which methods and routes are defined in order to throw the corresponding error if the client departs from the established routes.
+In general, Koa has more support (due to a larger community) and framework-specific plugins (body-parsers, json, loggers, etc.), whereas Polka does not.
+In terms of performance, some small benchmarking tests were carried out using the tool wrk. In general, both performed quite similarly in the executions carried out.
 
-<img src="https://github.com/khawla-k-banydomi/schedulerapi/blob/main/doc/Travis%20languages%20test.png" width="1000" height="200">
-
-<img src="https://github.com/khawla-k-banydomi/schedulerapi/blob/main/doc/Travis%20config%20file%20.png" width="400" height="600">
-
-
-
-# Circle CI
-
-[Authorize](https://github.com/khawla-k-banydomi/schedulerapi/blob/main/doc/Circle%20Ci%20Authorization.png) the application into GitHub then test the repository using the available templates of the [.circleci/config.yml](https://github.com/khawla-k-banydomi/schedulerapi/blob/main/.circleci/config.yml)
-in between I make [This PR](https://github.com/khawla-k-banydomi/schedulerapi/blob/main/doc/Circle%20Ci%20PR.png) in order to accept the changes from the CircleCi account.
-
-<img src="https://github.com/khawla-k-banydomi/schedulerapi/blob/main/doc/Circle%20CI.png" width="1000" height="500">
-
-<img src="https://github.com/khawla-k-banydomi/schedulerapi/blob/main/doc/Circle%20Ci%20success.png" width="1000" height="500">
-
-<img src="https://github.com/khawla-k-banydomi/schedulerapi/blob/main/doc/Circle%20CI%20update%20build.png" width="1000" height="500">
+Despite all of these I recommend to use express js since it can be considered as the optimized and best choice..When it comes to creating and exposing APIs (e.g. REST API) to communicate as a client with your server application, Express is an excellent choice for a server.[Read more Here](https://www.robinwieruch.de/node-express-server-rest-api/).
 
 
 
 
-- Additional tests:
-# Appveyor 
-- The following steps have be done :
 
-- authorize the access to the Appveyor then Appveyor CI then start writing test scripts (I use this to test Ubuntu only)
-```
-- image: Ubuntu
-stack:
- - node 14
- - node 10
-build: off
-test_script:
- - gulp test
-```
+
+
 <img src="https://github.com/khawla-k-banydomi/schedulerapi/blob/main/doc/Appveyor%20Access.png" width="1000" height="500">
 
 <img src="https://github.com/khawla-k-banydomi/schedulerapi/blob/main/doc/Appveyor%20%20CI%20access.png" width="1000" height="500">
