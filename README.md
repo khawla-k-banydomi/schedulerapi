@@ -72,13 +72,6 @@ app.use(logger('dev'));
 - process.env.PORT
 - process.env.MONGOURI
 
-# Structuring the API
-
-- we have three differentiated routs:
-- app.use('/', indexRouter);
-- app.use('/users', usersRouter);
-- app.use('/event', eventsRouter);
-
 # REST API design
 
 Below I indicate which routes (method used, the route in parentheses and / or parameters, which are specified at the end of the route preceded by ':') have been developed:
@@ -89,6 +82,14 @@ Below I indicate which routes (method used, the route in parentheses and / or pa
 - POST /event -> get the event details from user and create the event in database
 - PATCH /event/:id -> get the event id from user and details to modify and modify the event in database
 - DELETE /event/:id -> get the event id from user and delete the event
+
+# Structuring the tests for API
+
+- we have three differentiated routs:
+-[api_event.js](https://github.com/khawla-k-banydomi/schedulerapi/blob/main/test/api_event.js): which should test the GET,POST, return 200 if ok,return 404 if not
+-[api_index.js](https://github.com/khawla-k-banydomi/schedulerapi/blob/main/test/api_index.js): which should test GET for the index, return 200 if ok, return 404 if not.
+-[api_user.js](https://github.com/khawla-k-banydomi/schedulerapi/blob/main/test/api_user.js): which should test GET for the user, return 200 if ok, return 404 if not.
+
 
 
 # Designed errors and exceptions
