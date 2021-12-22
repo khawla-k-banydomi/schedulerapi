@@ -85,10 +85,15 @@ Below I indicate which routes (method used, the route in parentheses and / or pa
 
 # Structuring the tests for API
 
-- we have three differentiated routs:
--[api_event.js](https://github.com/khawla-k-banydomi/schedulerapi/blob/main/test/api_event.js): which should test the GET,POST, return 200 if ok,return 404 if not
--[api_index.js](https://github.com/khawla-k-banydomi/schedulerapi/blob/main/test/api_index.js): which should test GET for the index, return 200 if ok, return 404 if not.
--[api_user.js](https://github.com/khawla-k-banydomi/schedulerapi/blob/main/test/api_user.js): which should test GET for the user, return 200 if ok, return 404 if not.
+- We have three differentiated routs:
+# - [api_event.js](https://github.com/khawla-k-banydomi/schedulerapi/blob/main/test/api_event.js):
+which should test the GET,POST, return 200 if ok,return 404 if not
+
+# - [api_index.js](https://github.com/khawla-k-banydomi/schedulerapi/blob/main/test/api_index.js):
+which should test GET for the index, return 200 if ok, return 404 if not.
+
+# - [api_user.js](https://github.com/khawla-k-banydomi/schedulerapi/blob/main/test/api_user.js):
+which should test GET for the user, return 200 if ok, return 404 if not.
 
 
 
