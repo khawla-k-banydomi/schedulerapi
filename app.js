@@ -9,12 +9,12 @@ var usersRouter = require('./src/routes/users');
 var eventsRouter = require('./src/routes/events');
 
 // add DB
-const connection = mongoose.connect('mongodb://localhost:27017/event-scheduler', { useNewUrlParser: true });
-connection.then(
-    (db) => {
-    console.log("Successfully connected to DB!");
-},
- (err) => { console.log(err); }).catch(err=>console.log("Error in Connecting Mongodb"));
+const connection = mongoose.connect(process.env.MONGOURI, { useNewUrlParser: true });
+// connection.then(
+//     (db) => {
+//     console.log("Successfully connected to DB!");
+// },
+//  (err) => { console.log(err); }).catch(err=>console.log("Error in Connecting Mongodb"));
 
 // server instance
 var app = express();
@@ -45,7 +45,5 @@ app.use(function(err, req, res, next) {
   res.send('error');
 });
 
-app.listen(8080,()=>{
-  console.log(`Server up and running!`);
-})
+app.listen(process.env.PORT || 8080)
 module.exports = app;
