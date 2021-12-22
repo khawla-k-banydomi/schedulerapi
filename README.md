@@ -38,6 +38,13 @@ We have a method allowedMethods () in the router Koa that will allow the applica
 In general, Koa has more support (due to a larger community) and framework-specific plugins (body-parsers, json, loggers, etc.), whereas Polka does not.
 In terms of performance, some small benchmarking tests were carried out using the tool wrk. In general, both performed quite similarly in the executions carried out.
 
+
+Conclusions and options
+
+Polka is a microframework with a minimalist design that allows us to develop applications quickly. In their documentation, they also compare it to other frameworks (such as Koa and Express) in Benchmarks, and it appears to be the most efficient.
+
+However, I believe that the separation of the router from the application, the support via plugins, the larger community, and the overall operation of Koa make it a more complete and interesting option for implementing the API project.
+
 Despite all of these I recommend to use express js since it can be considered as the optimized and best choice..When it comes to creating and exposing APIs (e.g. REST API) to communicate as a client with your server application, Express is an excellent choice for a server.[Read more Here](https://www.robinwieruch.de/node-express-server-rest-api/).
 
 
