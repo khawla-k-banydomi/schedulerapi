@@ -46,15 +46,6 @@ Despite all of these I recommend to use express js since it can be considered as
 
 
 
-<img src="https://github.com/khawla-k-banydomi/schedulerapi/blob/main/doc/Appveyor%20Access.png" width="1000" height="500">
-
-<img src="https://github.com/khawla-k-banydomi/schedulerapi/blob/main/doc/Appveyor%20%20CI%20access.png" width="1000" height="500">
-
-<img src="https://github.com/khawla-k-banydomi/schedulerapi/blob/main/doc/Appveyor.png" width="1000" height="500">
-
-
-[Complete Continuous Integration milestone](https://github.com/khawla-k-banydomi/schedulerapi/milestone/7)
-
-
+<--! img src="https://github.com/khawla-k-banydomi/schedulerapi/blob/main/doc/Appveyor%20Access.png" width="1000" height="500">
 
 
