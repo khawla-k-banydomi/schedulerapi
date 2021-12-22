@@ -79,7 +79,6 @@ app.use(logger('dev'));
 - app.use('/users', usersRouter);
 - app.use('/event', eventsRouter);
 
-
 # REST API design
 
 Below I indicate which routes (method used, the route in parentheses and / or parameters, which are specified at the end of the route preceded by ':') have been developed:
