@@ -65,12 +65,80 @@ var logger = require('morgan');
 app.use(logger('dev'));
 
 
+- Distributed configuration
+
+ In case of failure, we read the information from an .env 
+ Added config by using .env file ;
+- process.env.PORT
+- process.env.MONGOURI
+
+# Structuring the API
+
+- we have three differentiated routs:
+- app.use('/', indexRouter);
+- app.use('/users', usersRouter);
+- app.use('/event', eventsRouter);
 
 
+# REST API design
+
+Below I indicate which routes (method used, the route in parentheses and / or parameters, which are specified at the end of the route preceded by ':') have been developed:
+
+- GET / index -> route to check if server is running
+- GET  /event -> fetch all the events and return to user 
+- GET /event/:id -> get the event id from user and return that event from the database
+- POST /event -> get the event details from user and create the event in database
+- PATCH /event/:id -> get the event id from user and details to modify and modify the event in database
+- DELETE /event/:id -> get the event id from user and delete the event
 
 
+# Designed errors and exceptions
+
+To manage and control the possible errors that arise in the application, I create a generic exception that includes the name to identify the "type" of exception which it might exist as well an informational message. The exception is defined as a function in exception.js :
+```
+function Exception(name, msg){
+    this.name = name;
+    this.msg = msg;
+}
+```
+
+In this way, we can throw the exception in the controllers, it is caught in the routers (where the different routes are defined, in our case they are in the folder routes ) and thus we can throw a corresponding error code.
+
+now I decided to set two types of exceptions:
+
+   - NotFound . For when we are specifying an operation on a resource (for example, the identifier of an event) and that resource does not exist. In that case we will launch a 404.
+  
+   - Internal server Error: it is a very general HTTP status code that means something has gone wrong on the web site's server.In that case we will launch a 500.
 
 
-<--! img src="https://github.com/khawla-k-banydomi/schedulerapi/blob/main/doc/Appveyor%20Access.png" width="1000" height="500">
+## To sum up we have the following :
 
+```
+# Nodejs, ExpressJs and Mongodb is used to build the restful api;
+-  Nodejs is used to build scalable network applications using its event driven approach which makes the API development fast and scalable.
+
+# Following endpoints are implemented;
+
+- GET / index -> route to check if server is running
+- GET  /event -> fetch all the events and return to user
+- GET /event/:id -> get the event id from user and return that event from the database
+- POST /event -> get the event details from user and create the event in database
+- PATCH /event/:id -> get the event id from user and details to modify and modify the event in database
+- DELETE /event/:id -> get the event id from user and delete the event
+
+# Following are the gulp tests;
+- gulp test
+- gulp task -> to run the tests
+- gulp nodemon -> to start server
+- gulp watch -> to watch the app
+- gulp start -> to start the app
+
+# morgan logger is used which is a middleware for nodejs
+
+# Added config by using .env file ;
+- process.env.PORT
+- process.env.MONGOURI
+>
+
+```
 
