@@ -1,4 +1,5 @@
 var express = require('express');
+
 const { getAllEvents, getOneEvent, createEvent, modifyEvent, deleteEvent, resetEvent } = require('../controllers/EventController');
 var router = express.Router();
 

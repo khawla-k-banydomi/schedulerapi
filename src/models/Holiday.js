@@ -1,6 +1,5 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
-
 var holidaySchema = new Schema({
     name: {
         type: String,

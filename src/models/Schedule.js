@@ -1,6 +1,5 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
-
 var scheduleSchema = new Schema({
     title: {
         type: String,

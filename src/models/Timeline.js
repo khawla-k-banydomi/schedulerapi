@@ -1,6 +1,5 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
-
 var timelineSchema = new Schema({
     name: {
         type: String,
