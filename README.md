@@ -50,7 +50,15 @@ Despite all of these I recommend to use express js since it can be considered as
 
 
 
-# Best practices
+# [Best practices](https://stackoverflow.blog/2020/03/02/best-practices-for-rest-api-design/)
+- Accept and respond with JSON
+- Use nouns instead of verbs in endpoint paths
+- Use logical nesting on endpoints
+- Handle errors gracefully and return standard error codes
+- Allow filtering, sorting, and pagination
+- Maintain good security practices
+- Cache data to improve performance
+- Versioning our APIs
 - Setting up logs
 
 The use of logs is essential in any microservice to have a history of what happens in our application. Many and varied names exist for our language, such as Winston, loglevel, Pino, and Morgan.
@@ -146,4 +154,7 @@ now I decided to set two types of exceptions:
 >
 
 ```
-
+# References:
+[Tutorial provided by Prof.Claudia](https://restfulapi.net/rest-api-design-tutorial-with-example/)
+[Tutorial related to the subject-'Temas'](http://jj.github.io/CC/documentos/temas/Microservicios.html)
+[Good practices must be followed when building an API](https://stackoverflow.blog/2020/03/02/best-practices-for-rest-api-design/)
