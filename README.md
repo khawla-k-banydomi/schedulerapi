@@ -155,6 +155,6 @@ now I decided to set two types of exceptions:
 
 ```
 # References:
-[Tutorial provided by Prof.Claudia](https://restfulapi.net/rest-api-design-tutorial-with-example/)
-[Tutorial related to the subject-'Temas'](http://jj.github.io/CC/documentos/temas/Microservicios.html)
-[Good practices must be followed when building an API](https://stackoverflow.blog/2020/03/02/best-practices-for-rest-api-design/)
+- [Tutorial provided by Prof.Claudia](https://restfulapi.net/rest-api-design-tutorial-with-example/)
+- [Tutorial related to the subject-'Temas'](http://jj.github.io/CC/documentos/temas/Microservicios.html)
+- [Good practices must be followed when building an API](https://stackoverflow.blog/2020/03/02/best-practices-for-rest-api-design/)
