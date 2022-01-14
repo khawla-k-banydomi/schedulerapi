@@ -56,7 +56,6 @@ const resetEvent = async (req, res, next) => {
         next(err);
     }
 }
-
 module.exports ={
     getAllEvents,
     getOneEvent,
