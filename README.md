@@ -71,7 +71,6 @@ in my application I use this:
 var logger = require('morgan');
 app.use(logger('dev'));
 
-
 - Distributed configuration
 
  In case of failure, we read the information from an .env 
