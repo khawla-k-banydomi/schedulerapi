@@ -21,4 +21,5 @@ router.delete('/:id', deleteEvent);
 // reset an event
 router.patch('/:id', resetEvent);
 
+
 module.exports = router;
