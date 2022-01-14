@@ -49,7 +49,6 @@ Despite all of these I recommend to use express js since it can be considered as
 
 
 
-
 # [Best practices](https://stackoverflow.blog/2020/03/02/best-practices-for-rest-api-design/)
 - Accept and respond with JSON
 - Use nouns instead of verbs in endpoint paths
