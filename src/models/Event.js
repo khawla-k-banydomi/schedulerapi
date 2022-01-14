@@ -32,5 +32,4 @@ var eventSchema = new Schema({
         type: Boolean
     }
 });
-
 module.exports = mongoose.model('Event', eventSchema);

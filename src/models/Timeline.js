@@ -21,5 +21,4 @@ var timelineSchema = new Schema({
         type: Date,
     },
 });
-
 module.exports = mongoose.model('Timeline', timelineSchema);

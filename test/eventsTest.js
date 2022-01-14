@@ -1,6 +1,5 @@
 process.env.NODE_ENV = 'test';
 let Event = require('../src/models/Event');
-
 let chai = require('chai');
 let chaiHttp = require('chai-http');
 let app = require('../app');

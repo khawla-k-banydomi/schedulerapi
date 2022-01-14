@@ -16,5 +16,4 @@ var holidaySchema = new Schema({
         ref: 'Timeline'
     },
 });
-
 module.exports = mongoose.model('Holiday', holidaySchema);

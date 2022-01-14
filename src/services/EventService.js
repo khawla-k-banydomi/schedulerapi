@@ -29,7 +29,6 @@ const resetOne = async (id, updatedObj) => {
     if (!event) throw new NotFound(`No event found with id ${id} !`);
     return event;
 }
-
 module.exports={
     getAll,
     getOne,

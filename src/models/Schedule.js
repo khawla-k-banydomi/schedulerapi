@@ -14,5 +14,4 @@ var scheduleSchema = new Schema({
         default: 0
     },
 });
-
 module.exports = mongoose.model('Schedule', scheduleSchema);
