@@ -7,5 +7,4 @@ router.get('/', function (req, res, next) {
   res.send('Server running on Docker!'
   )
 });
-
 module.exports = router;
