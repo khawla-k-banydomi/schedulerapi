@@ -1,0 +1,22 @@
+lenguaje: node.js
+fichero_tareas: gulpfile.js
+
+before_install:
+  - npm i -g npm@7.24.2
+install:
+  - npm install
+  - npm install gulp-cli -g
+  - npm install gulp
+script:
+  run_test: npm run test
+
+test:
+  - test/eventsTest.js
+
+entidad:
+ - src/models/Event.js
+ - src/models/Schedule.js
+ - src/models/Timeline.js
+ - src/models/User.js
+ 
+make: gulp
