@@ -9,28 +9,32 @@
 
 
 # Milestones ⏲️
-Different milestones have been established [Here](https://github.com/khawla-k-banydomi/ActivityScheduler/milestones).
+Different milestones have been established [Here](https://github.com/khawla-k-banydomi/schedulerapi/milestones).
 # Issues: ❗
-There are several issues I have already created. [Here](https://github.com/khawla-k-banydomi/ActivityScheduler/issues?q=is%3Aissue+is%3Aclosed).
+There are several issues I have already created. [Here](https://github.com/khawla-k-banydomi/schedulerapi/issues).
 # User Stories : 📚 (historia de usuario) 
 - I have created several user stories which are the following:<br>
-- [US1](https://github.com/khawla-k-banydomi/ActivityScheduler/issues/4)<br>
-- [US2](https://github.com/khawla-k-banydomi/ActivityScheduler/issues/5)<br>
-- [US3](https://github.com/khawla-k-banydomi/ActivityScheduler/issues/6)<br>
-- [US4](https://github.com/khawla-k-banydomi/ActivityScheduler/issues/7)<br>
-- [US5](https://github.com/khawla-k-banydomi/ActivityScheduler/issues/8)<br>
-- [US6](https://github.com/khawla-k-banydomi/ActivityScheduler/issues/9)<br>
-- [US7](https://github.com/khawla-k-banydomi/ActivityScheduler/issues/10)<br>
-- [US8](https://github.com/khawla-k-banydomi/ActivityScheduler/issues/11)<br>
-- [US9](https://github.com/khawla-k-banydomi/ActivityScheduler/issues/12)<br>
-- [US10](https://github.com/khawla-k-banydomi/ActivityScheduler/issues/13).
+- [US1](https://github.com/khawla-k-banydomi/schedulerapi/issues/6)<br>
+- [US2](https://github.com/khawla-k-banydomi/schedulerapi/issues/7)<br>
+- [US3](https://github.com/khawla-k-banydomi/schedulerapi/issues/8)<br>
+- [US4](https://github.com/khawla-k-banydomi/schedulerapi/issues/9)<br>
+- [US5](https://github.com/khawla-k-banydomi/schedulerapi/issues/10)<br>
+- [US6](https://github.com/khawla-k-banydomi/schedulerapi/issues/11)<br>
+- [US7](https://github.com/khawla-k-banydomi/schedulerapi/issues/12)<br>
+- [US8](https://github.com/khawla-k-banydomi/schedulerapi/issues/13)<br>
+- [US9](https://github.com/khawla-k-banydomi/schedulerapi/issues/14)<br>
+- [US10](https://github.com/khawla-k-banydomi/schedulerapi/issues/15)<br>
+- [US11](https://github.com/khawla-k-banydomi/schedulerapi/issues/16)<br>
+- [US12](https://github.com/khawla-k-banydomi/schedulerapi/issues/17)<br>
+- [US13](https://github.com/khawla-k-banydomi/schedulerapi/issues/18)<br>
+- [US14](https://github.com/khawla-k-banydomi/schedulerapi/issues/19)<br>
 
 It is important to notice that user story shouldn't be closed untill it is well-implemented in the context of the application functionality.
 [Here](https://gist.github.com/seanh/8a5b7b36d5c4fdfcfbd3b42506296968) there are several important things regarding the uer-stories.
 
 
 # Main classes and methods :
-The main [Classes](https://github.com/khawla-k-banydomi/ActivityScheduler/tree/main/src/models) as well as [CRUD operations](https://github.com/khawla-k-banydomi/ActivityScheduler/tree/main/src/Controllers)
+The main [Classes] and [CRUD operations](https://github.com/khawla-k-banydomi/schedulerapi/tree/main/src/controllers)
 
 It shows the interface of the class (functions with arguments that will have the appropriate type and number, but without any business logic or functionality).
 
