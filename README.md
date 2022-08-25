@@ -1,4 +1,7 @@
+# Milestone 1: Specifying and planning the project.
 
+This Milestone is responsible for deviding the development of the project into several phases and milestones and create several user stories based
+on the Functionality of the application.
 
 
 # Main Repository For The Subject
