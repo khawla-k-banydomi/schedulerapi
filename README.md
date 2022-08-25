@@ -17,20 +17,20 @@ Different milestones have been established [Here](https://github.com/khawla-k-ba
 There are several issues I have already created. [Here](https://github.com/khawla-k-banydomi/schedulerapi/issues).
 # User Stories : 📚 (historia de usuario) 
 - I have created several user stories which are the following:<br>
-- [US1](https://github.com/khawla-k-banydomi/schedulerapi/issues/6)<br>
-- [US2](https://github.com/khawla-k-banydomi/schedulerapi/issues/7)<br>
-- [US3](https://github.com/khawla-k-banydomi/schedulerapi/issues/8)<br>
-- [US4](https://github.com/khawla-k-banydomi/schedulerapi/issues/9)<br>
-- [US5](https://github.com/khawla-k-banydomi/schedulerapi/issues/10)<br>
-- [US6](https://github.com/khawla-k-banydomi/schedulerapi/issues/11)<br>
-- [US7](https://github.com/khawla-k-banydomi/schedulerapi/issues/12)<br>
-- [US8](https://github.com/khawla-k-banydomi/schedulerapi/issues/13)<br>
-- [US9](https://github.com/khawla-k-banydomi/schedulerapi/issues/14)<br>
-- [US10](https://github.com/khawla-k-banydomi/schedulerapi/issues/15)<br>
-- [US11](https://github.com/khawla-k-banydomi/schedulerapi/issues/16)<br>
-- [US12](https://github.com/khawla-k-banydomi/schedulerapi/issues/17)<br>
-- [US13](https://github.com/khawla-k-banydomi/schedulerapi/issues/18)<br>
-- [US14](https://github.com/khawla-k-banydomi/schedulerapi/issues/19)<br>
+- [US1 : Create An Event](https://github.com/khawla-k-banydomi/schedulerapi/issues/6)<br>
+- [US2 : Delete An Event](https://github.com/khawla-k-banydomi/schedulerapi/issues/7)<br>
+- [US3 : Update An Event](https://github.com/khawla-k-banydomi/schedulerapi/issues/8)<br>
+- [US4 : Fetch an Event](https://github.com/khawla-k-banydomi/schedulerapi/issues/9)<br>
+- [US5 : Fetch A List Of Events](https://github.com/khawla-k-banydomi/schedulerapi/issues/10)<br>
+- [US6 : Restore Deleted Events](https://github.com/khawla-k-banydomi/schedulerapi/issues/11)<br>
+- [US7 : Create A Holiday](https://github.com/khawla-k-banydomi/schedulerapi/issues/12)<br>
+- [US8 : Create A Range Of Holidays](https://github.com/khawla-k-banydomi/schedulerapi/issues/13)<br>
+- [US9 : Fetch A Single Holiday](https://github.com/khawla-k-banydomi/schedulerapi/issues/14)<br>
+- [US10 : Fetch All Of My Holidays](https://github.com/khawla-k-banydomi/schedulerapi/issues/15)<br>
+- [US11 : Update The Holiday](https://github.com/khawla-k-banydomi/schedulerapi/issues/16)<br>
+- [US12 : Delete The Holiday](https://github.com/khawla-k-banydomi/schedulerapi/issues/17)<br>
+- [US13 : User Registeration](https://github.com/khawla-k-banydomi/schedulerapi/issues/18)<br>
+- [US14 : Read the profile information](https://github.com/khawla-k-banydomi/schedulerapi/issues/19)<br>
 
 It is important to notice that user story shouldn't be closed untill it is well-implemented in the context of the application functionality.
 [Here](https://gist.github.com/seanh/8a5b7b36d5c4fdfcfbd3b42506296968) there are several important things regarding the uer-stories.
