@@ -2,16 +2,20 @@ The Following is the whole user-stories related to the application (Activity-Sch
 For more about the user stories you have to read carefully the following [Guide](https://gist.github.com/seanh/8a5b7b36d5c4fdfcfbd3b42506296968).
 
 
-- [Create an event](https://github.com/khawla-k-banydomi/ActivityScheduler/issues/4) 
-- [Delete an event](https://github.com/khawla-k-banydomi/ActivityScheduler/issues/5)
-- [Change an event’s Title](https://github.com/khawla-k-banydomi/ActivityScheduler/issues/6)
-- [Change an event’s Description](https://github.com/khawla-k-banydomi/ActivityScheduler/issues/7)
-- [Repeat an event ](https://github.com/khawla-k-banydomi/ActivityScheduler/issues/8)
-- [Change an event start-time](https://github.com/khawla-k-banydomi/ActivityScheduler/issues/9)
-- [Update an event End-time ](https://github.com/khawla-k-banydomi/ActivityScheduler/issues/10)
-- [Change an event reminder](https://github.com/khawla-k-banydomi/ActivityScheduler/issues/11)
-- [Cancel an event reminder ](https://github.com/khawla-k-banydomi/ActivityScheduler/issues/12)
-- [Retrieve the scheduled events during certain period](https://github.com/khawla-k-banydomi/ActivityScheduler/issues/13)
+- [Create An Event](https://github.com/khawla-k-banydomi/schedulerapi/issues/6)<br>
+- [Delete An Event](https://github.com/khawla-k-banydomi/schedulerapi/issues/7)<br>
+- [Update An Event](https://github.com/khawla-k-banydomi/schedulerapi/issues/8)<br>
+- [Fetch an Event](https://github.com/khawla-k-banydomi/schedulerapi/issues/9)<br>
+- [Fetch A List Of Events](https://github.com/khawla-k-banydomi/schedulerapi/issues/10)<br>
+- [Restore Deleted Events](https://github.com/khawla-k-banydomi/schedulerapi/issues/11)<br>
+- [Create A Holiday](https://github.com/khawla-k-banydomi/schedulerapi/issues/12)<br>
+- [Create A Range Of Holidays](https://github.com/khawla-k-banydomi/schedulerapi/issues/13)<br>
+- [Fetch A Single Holiday](https://github.com/khawla-k-banydomi/schedulerapi/issues/14)<br>
+- [Fetch All Of My Holidays](https://github.com/khawla-k-banydomi/schedulerapi/issues/15)<br>
+- [Update The Holiday](https://github.com/khawla-k-banydomi/schedulerapi/issues/16)<br>
+- [Delete The Holiday](https://github.com/khawla-k-banydomi/schedulerapi/issues/17)<br>
+- [User Registeration](https://github.com/khawla-k-banydomi/schedulerapi/issues/18)<br>
+- [Read the profile information](https://github.com/khawla-k-banydomi/schedulerapi/issues/19)<br>
 
 <!--[Create holidays set](https://github.com/khawla-k-banydomi/ActivityScheduler/issues/14)
 - [Modify holidays set](https://github.com/khawla-k-banydomi/ActivityScheduler/issues/15)
