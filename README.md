@@ -14,7 +14,7 @@
 
 - To see the Fifth Milestone (hito-4) and To take a tour around CI in the context of our application please Go [Here](https://github.com/khawla-k-banydomi/schedulerapi/blob/main/doc/MS4_CI.md)
 - 
-- To see the complete description of the user stories please Go [Here](https://github.com/khawla-k-banydomi/ActivityScheduler/blob/main/doc/User-Stories.md). 📓
+- To see the complete description of the user stories please Go [Here](https://github.com/khawla-k-banydomi/schedulerapi/blob/main/doc/User-Stories.md). 📓
 
 > This milestone is responsible for what so called as a micro-services which can be defined as the small and a single service which comes from distributed computing architecture which in turns, connects many small services,it can be delivered via an (API) application programming interface..[Read more Here](https://www.bmc.com/blogs/microservice-vs-api/#:~:text=A%20microservice%20is%20a%20small,application%20programming%20interface%20(API)).
 
