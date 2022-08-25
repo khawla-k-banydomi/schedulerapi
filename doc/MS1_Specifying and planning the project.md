@@ -34,7 +34,7 @@ It is important to notice that user story shouldn't be closed untill it is well-
 
 
 # Main classes and methods :
-The main [Classes and CRUD (Create Read Update Delete) operations](https://github.com/khawla-k-banydomi/schedulerapi/tree/main/src/controllers)
+These are the main [Classes and CRUD (Create Read Update Delete) operations](https://github.com/khawla-k-banydomi/schedulerapi/tree/main/src/controllers) 
 
 It shows the interface of the class (functions with arguments that will have the appropriate type and number, but without any business logic or functionality).
 
