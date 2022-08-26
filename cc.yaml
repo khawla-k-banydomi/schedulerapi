@@ -15,8 +15,7 @@ test:
 
 entidad:
  - src/models/Event.js
- - src/models/Schedule.js
- - src/models/Timeline.js
+ - src/models/Holiday.js
  - src/models/User.js
  
 make: gulp
