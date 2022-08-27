@@ -41,6 +41,10 @@ Any of them can be used in conjunction with Chai, but the Chai + Mocha combinati
 <br>
 
 ---
+## Importante:
+IT IS A MUST TO INSTALL (npm) BY RUNNING THE FOLLOWING COMMAND:
+### npm install 
+
 ### To run the test we can write down the following command:
 ### gulp test
 - There are several tasks in the [test folder](https://github.com/khawla-k-banydomi/schedulerapi/blob/main/test) that could be tested which are the following:
