@@ -1,93 +1,73 @@
-# Milestone 1: Specifying and planning the project.
-
-This Milestone is responsible for deviding the development of the project into several phases and milestones and create several user stories based
-on the Functionality of the application.
-
 
 # Main Repository For The Subject
-- To Take a tour around the Application That I want to develop please Go [Here](https://github.com/khawla-k-banydomi/schedulerapi/blob/main/doc/MS0_Description.md). 🗓️
 - To see How I configure my Github account Please Go [Here](https://github.com/khawla-k-banydomi/schedulerapi/blob/main/doc/Configuration.md). 🔧
-- This application was created to allow me to keep track of my personal work agenda online, rather than having to keep track of it on paper or in a notebook, in order to write down tasks to be completed or meetings at work to which they must contribute; thus, this application will be very useful in the future.
+- To see the First Milestone (hito-0) and To Take a tour around the Application That I want to develop please Go [Here](https://github.com/khawla-k-banydomi/schedulerapi/blob/main/doc/Description.md). 🗓️
+- To see full descriptive document for the architecture and tools that I already and will use during the development check this [Document](https://github.com/khawla-k-banydomi/schedulerapi/blob/main/doc/Architecture.md) 📔
+- To see the Second Milestone (hito-1) and To take a tour around milestones and issues regarding the application please Go [Here](https://github.com/khawla-k-banydomi/schedulerapi/blob/main/doc/MS1_Specifying%20and%20planning%20the%20project.md). 🗒️
+- To see the complete description of the user stories please Go [Here](https://github.com/khawla-k-banydomi/schedulerapi/blob/main/doc/User-Stories.md). 📓
+- There are several unwanted issues that will be colsed and taged as removed.
+
+---
+### This is the Document for the Second-milestone which is the [test](https://jj.github.io/CC/documentos/proyecto/2021/2.Tests) milestone.
+- To sum up I have to add the following features:<br>
+- Testing-Framework and Assertion-Library, and configure the [cc.yaml](https://github.com/khawla-k-banydomi/schedulerapi/blob/main/cc.yaml) file correctly.
+- In this case I’ll be using Mocha which allows asynchronous testing using any assertion library, Chai as well is a Javascript Assertion Library; It performs functions and methods to test the code.
+> How to run the test:<br>
+>  gulp test 
+
+# TaskManager
+- For task management, I've gone back and forth between npm, grunt, and gulp. All three tools are well-known in the Javascript community, and any of them could be useful for the purposes of this project.We are already using npm as a dependency manager in our project. Since we already use it for that, I'd like to have a separate task management tool (which leaves us between grunt and gulp).Grunt and Gulp are two tools that do the same thing: they automate tasks. Although the performance benchmarks that I've been observing place gulp above, it is not a factor that we will consider.Where we see a significant difference is in the notation of these tools: whereas grunt is more focused on configuration files (JSON type), gulp is focused on code (Javascript), which in my opinion makes it easier to use.
+comprehend and apply.
+
+- I ultimately chose Gulp because of what I previously mentioned; However there are several alternatives such as Grunt.
+There are several differences between Grunt and Gulp to see more information about this you can visit this [source](https://www.keycdn.com/blog/gulp-vs-grunt).
+You can look at [gulp.js](https://github.com/khawla-k-banydomi/schedulerapi/blob/main/gulpfile.js), There are several tasks inside this file.
+*One is to ensure that Gulp working properly (Gulp Tasks are working) which can be considered as test task.
+*The other one for the server which is (start and restart the server).
+
+# Assertion Library:
+- There are numerous assertion libraries for Javascript, and the language itself has an assertion library (assert).
+There are two approaches: [BDD](https://www.agilealliance.org/glossary/bdd/) and [TDD](https://www.agilealliance.org/glossary/tdd/). and there are several differences between the two mentioned approaches [inside this link](https://www.pluralsight.com/blog/software-development/tdd-vs-bdd).
+Because we are using domain-driven design in conjunction with user stories, and the client is guiding the project's development, I believe the BDD approach is more appropriate.
+- BDD-like assertion libraries are intended to be close to natural language. In this way, they are easier to understand and adapt to the user's needs. The library that I have finally chosen is [Chai.js](https://www.chaijs.com/) , which has expressions of the type expect (). To.be.a () or expect (). To.equal () . we can see the different styles of Chai's assertions [inside this blog](https://www.chaijs.com/guide/styles/).
+
+
+# Testing-Framework:
+
+
+- Since we've chosen BDD(Behaviour Driven Development), some benchmarks that align with this philosophy are Mocha, Cucumber, and Jest.
+Any of them can be used in conjunction with Chai, but the Chai + Mocha combination appears to be quite popular in the community ([inside this link](https://www.chaijs.com/guide/installation/),it is obvious that Chai recommends Mocha, but keep in mind that it is compatible with anyone), so we chose that combination. 
+
+<br>
+
+---
+### To run the test we can write down the following command:
+### gulp test
+- There are several tasks in the [test folder](https://github.com/khawla-k-banydomi/schedulerapi/blob/main/test) that could be tested which are the following:
+
+
+#### [Tests For Events : ](https://github.com/khawla-k-banydomi/schedulerapi/blob/main/test/api_event.js)
+- Events Service Tests
+- Events Controller Tests
+
+#### [Tests For Holiday : ](https://github.com/khawla-k-banydomi/schedulerapi/blob/main/test/api_holiday.js)
+- Holidays Service Tests
+- Holidays Controller Tests
+
+#### [Tests For User : ](https://github.com/khawla-k-banydomi/schedulerapi/blob/main/test/api_user.js)
+- Users Service Tests
+- Users Controller Tests
+
+
+- The following screen-shot shows the whole result after run :gulp test
+
+<img src="https://github.com/khawla-k-banydomi/schedulerapi/blob/hito2/doc/unit%20test%201.png" width="1000" height="700">
+
+<img src="https://github.com/khawla-k-banydomi/schedulerapi/blob/hito2/doc/unit%20test%202.png" width="1000" height="700">
+
+
+---
+# [Test-milestone:Completed](https://github.com/khawla-k-banydomi/schedulerapi/milestone/5)
 
 
 
-# Milestones ⏲️
-Different milestones have been established [Here](https://github.com/khawla-k-banydomi/schedulerapi/milestones).
-# Issues: ❗
-There are several issues I have already created. [Here](https://github.com/khawla-k-banydomi/schedulerapi/issues).
-# User Stories : 📚 (historia de usuario) 
-- I have created several user stories which are the following:<br>
-- [US1 : Create An Event](https://github.com/khawla-k-banydomi/schedulerapi/issues/6)<br>
-- [US2 : Delete An Event](https://github.com/khawla-k-banydomi/schedulerapi/issues/7)<br>
-- [US3 : Update An Event](https://github.com/khawla-k-banydomi/schedulerapi/issues/8)<br>
-- [US4 : Fetch an Event](https://github.com/khawla-k-banydomi/schedulerapi/issues/9)<br>
-- [US5 : Fetch A List Of Events](https://github.com/khawla-k-banydomi/schedulerapi/issues/10)<br>
-- [US6 : Restore Deleted Events](https://github.com/khawla-k-banydomi/schedulerapi/issues/11)<br>
-- [US7 : Create A Holiday](https://github.com/khawla-k-banydomi/schedulerapi/issues/12)<br>
-- [US8 : Create A Range Of Holidays](https://github.com/khawla-k-banydomi/schedulerapi/issues/13)<br>
-- [US9 : Fetch A Single Holiday](https://github.com/khawla-k-banydomi/schedulerapi/issues/14)<br>
-- [US10 : Fetch All Of My Holidays](https://github.com/khawla-k-banydomi/schedulerapi/issues/15)<br>
-- [US11 : Update The Holiday](https://github.com/khawla-k-banydomi/schedulerapi/issues/16)<br>
-- [US12 : Delete The Holiday](https://github.com/khawla-k-banydomi/schedulerapi/issues/17)<br>
-- [US13 : User Registeration](https://github.com/khawla-k-banydomi/schedulerapi/issues/18)<br>
-- [US14 : Read the profile information](https://github.com/khawla-k-banydomi/schedulerapi/issues/19)<br>
-
-It is important to notice that user story shouldn't be closed untill it is well-implemented in the context of the application functionality.
-[Here](https://gist.github.com/seanh/8a5b7b36d5c4fdfcfbd3b42506296968) there are several important things regarding the uer-stories.
-
-
-# Main classes and methods :
-These are the main [Classes and CRUD (Create Read Update Delete) operations](https://github.com/khawla-k-banydomi/schedulerapi/tree/main/src/controllers) 
-
-It shows the interface of the class (functions with arguments that will have the appropriate type and number, but without any business logic or functionality).
-
-
-# Cloud Deployment ☁️
-#### *Using cloud provide us with several advantages such as the following:* 📦
-- Faster. Builds that deploy code, databases, and application releases, including resource provisioning, can be automated.
-- Cost savings. Control costs with consumption-based pricing and eliminate capital-intensive on-premises environments.
-- Growth platform Utilize the global infrastructure provided by cloud service providers to seamlessly expand the business into new geographies.
-- Scalability and agility. To meet peak business demands without provisioning for excess capacity, use auto-scaling and scalability.
-- Geographic coverage. users can access applications from any location and on any device.
-- Efficiency in operations. Use the cloud's inherent automation to improve operational efficiency and reduce human effort.
-- A competitive advantage. Reduce the time to market for new features by leveraging infrastructure as code and development, security, and operations.
-- Empowered users. Increase productivity by providing cloud-based self-service options for users, such as portals, executive and operational dashboards.
-
-
-#### Entities to be deployed:
-- Events .
-- A set of Holidays.
-
-#### Client:
-- myself(It is developed to manage my personal timeline)
-
-
- 
- # Application Architecture 🏗️
-### The first and most important step in the software development is to select the Architecture; in this context I choose Layered architecture.
-
-Layered architecture is implemented strictly following MVC approach. Moreover, business logic is 
-completely separated from controllers while implementing to make sure that code is reusable, 
-easy to refactor and a better way to structure project overall.
-
-The separation of concerns among components is a powerful feature of the layered architecture pattern.
-Components within a specific layer only deal with logic specific to that layer.
-
-
-#### I choose it since it has the following *advantages*:
-- High degree of testability Because components are associated with specific layers of the architecture,other layers can be mocked or stubbed, making this pattern relatively simple to test.
-- This pattern is so well known and is not overly complex to implement, it is a natural choice for most business-application development.
-- Additionally, because most companies develop applications by separating skill sets by layers, this pattern becomes a natural choice for most business-application development.
-- Maintainable
-- Separate "roles" are simple to assign.
-- It is simple to update and improve layers separately.
-
-### This Pattern is Ideal for:    🎬
-
-- Line-of-business apps that perform more than just CRUD operations.
-- New applications that must be developed quickly.
-- Teams comprised of inexperienced developers who are unfamiliar with other architectures, but whose applications necessitate strict maintainability and testability standards
-
- 
- 
- 
