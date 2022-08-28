@@ -42,23 +42,25 @@ Any of them can be used in conjunction with Chai, but the Chai + Mocha combinati
 
 ---
 ## Importante:
-IT IS A MUST TO INSTALL (npm) BY RUNNING THE FOLLOWING COMMAND:
+
+## IT IS A MUST TO INSTALL (npm) BY RUNNING THE FOLLOWING COMMAND:
 ### npm install 
 
-### To run the test we can write down the following command:
+## To run the test we can write down the following command:
 ### gulp test
+
 - There are several tasks in the [test folder](https://github.com/khawla-k-banydomi/schedulerapi/blob/main/test) that could be tested which are the following:
 
 
-#### [Tests For Events : ](https://github.com/khawla-k-banydomi/schedulerapi/blob/main/test/api_event.js)
+###[Tests For Events : ](https://github.com/khawla-k-banydomi/schedulerapi/blob/main/test/api_event.js)
 - Events Service Tests
 - Events Controller Tests
 
-#### [Tests For Holiday : ](https://github.com/khawla-k-banydomi/schedulerapi/blob/main/test/api_holiday.js)
+###[Tests For Holiday : ](https://github.com/khawla-k-banydomi/schedulerapi/blob/main/test/api_holiday.js)
 - Holidays Service Tests
 - Holidays Controller Tests
 
-#### [Tests For User : ](https://github.com/khawla-k-banydomi/schedulerapi/blob/main/test/api_user.js)
+###[Tests For User : ](https://github.com/khawla-k-banydomi/schedulerapi/blob/main/test/api_user.js)
 - Users Service Tests
 - Users Controller Tests
 
