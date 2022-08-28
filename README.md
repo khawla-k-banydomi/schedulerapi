@@ -43,7 +43,7 @@ Any of them can be used in conjunction with Chai, but the Chai + Mocha combinati
 ---
 ## Importante:
 
-## IT IS A MUST TO INSTALL (npm) BY RUNNING THE FOLLOWING COMMAND:
+## IT IS A MUST TO INSTALL (npm) BY RUNNING THE FOLLOWING COMMAND:(to install dependencies)
 ### npm install 
 
 ## To run the test we can write down the following command:
