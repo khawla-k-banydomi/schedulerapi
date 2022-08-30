@@ -75,8 +75,8 @@ gulp.task('test', async () => {
 //gulp.task('watch', function () {
 // gulp.watch('app/**/*.js', ['bundle-watch']);
 //gulp.watch(paths.copyFromAppDir, { cwd: 'app' }, ['copy-watch']);
-// gulp.watch('app/**/*.less', ['less-watch']);
-});
+// gulp.watch('app/**/*.less', ['less-watch']); 
+// });
 //
 
 
