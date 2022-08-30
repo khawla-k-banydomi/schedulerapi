@@ -21,4 +21,5 @@ var holidaySchema = new Schema({
   }
 });
 
+
 module.exports = mongoose.model('Holiday', holidaySchema);
