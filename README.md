@@ -42,7 +42,7 @@ Any of them can be used in conjunction with Chai, but the Chai + Mocha combinati
 ---
 ### To run the test we can write down the following command:
 ### gulp test
-- There are several tasks in the [eventsTest.js file](https://github.com/khawla-k-banydomi/schedulerapiCE/blob/main/test/eventsTest.js) that could be tested which are the following:
+- There are several tasks in the [test folder](https://github.com/khawla-k-banydomi/schedulerapiCE/blob/main/test) that could be tested which are the following:
 - Testing GET event 
 - Testing POST event
 - Testing modify(PATCH) event
@@ -50,7 +50,9 @@ Any of them can be used in conjunction with Chai, but the Chai + Mocha combinati
 
 - The following screen-shot shows the whole result after run :gulp test
 
-<img src="https://github.com/khawla-k-banydomi/schedulerapiCE/blob/main/doc/complete-test-MS2.png" width="1000" height="700">
+<img src="https://github.com/khawla-k-banydomi/schedulerapiCE/blob/main/doc/unit%20test%201.png" width="1000" height="700">
+
+<img src="https://github.com/khawla-k-banydomi/schedulerapiCE/blob/main/doc/unit%20test%202.png" width="1000" height="700">
 
 ---
 # [Test-milestone:Completed](https://github.com/khawla-k-banydomi/schedulerapiCE/milestone/5)
