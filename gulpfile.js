@@ -22,8 +22,7 @@ function testRun(cb) {
 exports.test = gulp.series(install, testRun);
 
 
-
-
+//old edition of the GULPFILE
 
 /* var gulp = require('gulp'),
   mocha = require('gulp-mocha'),
