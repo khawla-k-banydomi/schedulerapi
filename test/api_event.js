@@ -6,47 +6,49 @@ const chai = require('chai');
 const expect = chai.expect;
 const Event = require('../src/models/Event');
 const EventService = require('../src/services/EventService');
-const EventsController = require('../src/controllers/EventController');
+const EventController = require('../src/controllers/EventController');
 
-let findByIdStub = sinon.stub(Event, 'findById'),
+let findOneStub = sinon.stub(Event, 'findOne'),
   findStub = sinon.stub(Event, 'find'),
   createStub = sinon.stub(Event, 'create'),
-  findByIdAndUpdateStub = sinon.stub(Event, 'findByIdAndUpdate'),
-  findByIdAndDeleteStub = sinon.stub(Event, 'findByIdAndDelete'),
+  findOneAndUpdateStub = sinon.stub(Event, 'findOneAndUpdate'),
   randomDate = faker.date.future(100);
 
 describe('Events Service Tests', () => {
+  const eventService = new EventService(),
+    username = faker.name.fullName();
+
   describe('List Events', () => {
     it('return all events', async function () {
       const fakeEvents = [
         {
           _id: faker.database.mongodbObjectId(),
-          userId: faker.database.mongodbObjectId(),
+          user: username,
           name: faker.name.firstName(),
           description: faker.lorem.paragraph(),
           startTime: new Date(randomDate.setMonth(3)),
           endTime: new Date(randomDate.setMonth(5)),
           reminderTime: new Date(randomDate.setMonth(2)),
           type: 'urgent',
-          repeat: 2,
-          restore: true
+          repeatEvery: 'day',
+          isDeleted: true
         },
         {
           _id: faker.database.mongodbObjectId(),
-          userId: faker.database.mongodbObjectId(),
+          user: username,
           name: faker.name.firstName(),
           description: faker.lorem.paragraph(),
           startTime: new Date(randomDate.setMonth(3)),
           endTime: new Date(randomDate.setMonth(5)),
           reminderTime: new Date(randomDate.setMonth(2)),
           type: 'normal',
-          repeat: 3,
-          restore: false
+          repeatEvery: 'month',
+          isDeleted: false
         }
       ];
 
       findStub.returns(fakeEvents);
-      const events = await EventService.getAll();
+      const events = await eventService.getAll(username);
 
       expect(events).to.have.lengthOf(2);
       expect(events[0]._id).to.equal(fakeEvents[0]._id);
@@ -55,10 +57,10 @@ describe('Events Service Tests', () => {
       expect(events[1].name).to.equal(fakeEvents[1].name);
       expect(events[0].type).to.equal('urgent');
       expect(events[1].type).to.equal('normal');
-      expect(events[0].repeat).to.equal(2);
-      expect(events[1].repeat).to.equal(3);
-      expect(events[0].restore).to.equal(true);
-      expect(events[1].restore).to.equal(false);
+      expect(events[0].repeatEvery).to.equal('day');
+      expect(events[1].repeatEvery).to.equal('month');
+      expect(events[0].isDeleted).to.equal(true);
+      expect(events[1].isDeleted).to.equal(false);
     });
   });
 
@@ -66,39 +68,39 @@ describe('Events Service Tests', () => {
     it('return an event by id', async function () {
       const fakeEvent = {
         _id: faker.database.mongodbObjectId(),
-        userId: faker.database.mongodbObjectId(),
+        user: faker.name.fullName(),
         name: faker.name.firstName(),
         description: faker.lorem.paragraph(),
         startTime: new Date(randomDate.setMonth(3)),
         endTime: new Date(randomDate.setMonth(5)),
         reminderTime: new Date(randomDate.setMonth(2)),
         type: 'urgent',
-        repeat: 2,
-        restore: true
+        repeatEvery: 'day',
+        isDeleted: false
       };
 
-      findByIdStub.returns(fakeEvent);
-      const event = await EventService.getOne(fakeEvent._id);
+      findOneStub.returns(fakeEvent);
+      const event = await eventService.getOne(fakeEvent._id, username);
 
       expect(event._id).to.equal(fakeEvent._id);
       expect(event.name).to.equal(fakeEvent.name);
       expect(event.type).to.equal('urgent');
-      expect(event.restore).to.equal(true);
+      expect(event.isDeleted).to.equal(false);
     });
 
     it('throw an not found error if id does not match', async function () {
-      findByIdStub.returns(null);
+      findOneStub.returns(null);
 
       const id = faker.database.mongodbObjectId();
 
       let err;
       try {
-        await EventService.getOne(id);
+        await eventService.getOne(id, username);
       } catch (error) {
         err = error;
       }
 
-      expect(err.message).to.equal(`No event found with id ${id} !`);
+      expect(err.message).to.equal('Event does not exist');
       expect(err.status).to.equal(404);
     });
   });
@@ -107,45 +109,70 @@ describe('Events Service Tests', () => {
     it('create an event', async function () {
       const fakeEvent = {
         _id: faker.database.mongodbObjectId(),
-        userId: faker.database.mongodbObjectId(),
+        user: faker.name.fullName(),
         name: faker.name.firstName(),
         description: faker.lorem.paragraph(),
         startTime: new Date(randomDate.setMonth(3)),
         endTime: new Date(randomDate.setMonth(5)),
         reminderTime: new Date(randomDate.setMonth(2)),
         type: 'urgent',
-        repeat: 2,
-        restore: true
+        repeatEvery: 'day',
+        isDeleted: false
       };
 
       createStub.returns(fakeEvent);
-      const event = await EventService.createOne(fakeEvent);
+      const event = await eventService.createOne(username, fakeEvent);
 
       expect(event._id).to.equal(fakeEvent._id);
       expect(event.name).to.equal(fakeEvent.name);
       expect(event.type).to.equal('urgent');
-      expect(event.restore).to.equal(true);
+      expect(event.isDeleted).to.equal(false);
+    });
+
+    it('not authenticated user can not create a new event', async function () {
+      const fakeEvent = {
+        _id: faker.database.mongodbObjectId(),
+        user: faker.name.fullName(),
+        name: faker.name.firstName(),
+        description: faker.lorem.paragraph(),
+        startTime: new Date(randomDate.setMonth(3)),
+        endTime: new Date(randomDate.setMonth(5)),
+        reminderTime: new Date(randomDate.setMonth(2)),
+        type: 'urgent',
+        repeatEvery: 'day',
+        isDeleted: false
+      };
+
+      let err;
+      try {
+        await eventService.createOne(null, fakeEvent);
+      } catch (error) {
+        err = error;
+      }
+
+      expect(err.message).to.equal('Unauthorized');
+      expect(err.status).to.equal(401);
     });
 
     it('start time must be before end time', async function () {
       const fakeEvent = {
         _id: faker.database.mongodbObjectId(),
-        userId: faker.database.mongodbObjectId(),
+        user: faker.name.fullName(),
         name: faker.name.firstName(),
         description: faker.lorem.paragraph(),
         startTime: new Date(randomDate.setMonth(8)),
         endTime: new Date(randomDate.setMonth(5)),
         reminderTime: new Date(randomDate.setMonth(3)),
         type: 'urgent',
-        repeat: 2,
-        restore: true
+        repeatEvery: 'day',
+        isDeleted: false
       };
 
       createStub.returns(fakeEvent);
 
       let err;
       try {
-        await EventService.createOne(fakeEvent);
+        await eventService.createOne(username, fakeEvent);
       } catch (error) {
         err = error;
       }
@@ -157,22 +184,22 @@ describe('Events Service Tests', () => {
     it('start time must be in the future', async function () {
       const fakeEvent = {
         _id: faker.database.mongodbObjectId(),
-        userId: faker.database.mongodbObjectId(),
+        user: faker.name.fullName(),
         name: faker.name.firstName(),
         description: faker.lorem.paragraph(),
         startTime: faker.date.past(),
         endTime: new Date(randomDate.setMonth(7)),
         reminderTime: new Date(randomDate.setMonth(5)),
         type: 'urgent',
-        repeat: 2,
-        restore: true
+        repeatEvery: 'day',
+        isDeleted: false
       };
 
       createStub.returns(fakeEvent);
 
       let err;
       try {
-        await EventService.createOne(fakeEvent);
+        await eventService.createOne(username, fakeEvent);
       } catch (error) {
         err = error;
       }
@@ -184,22 +211,22 @@ describe('Events Service Tests', () => {
     it('reminder time must be prior start time', async function () {
       const fakeEvent = {
         _id: faker.database.mongodbObjectId(),
-        userId: faker.database.mongodbObjectId(),
+        user: faker.name.fullName(),
         name: faker.name.firstName(),
         description: faker.lorem.paragraph(),
         startTime: new Date(randomDate.setMonth(4)),
         endTime: new Date(randomDate.setMonth(7)),
         reminderTime: new Date(randomDate.setMonth(5)),
         type: 'urgent',
-        repeat: 2,
-        restore: true
+        repeatEvery: 'day',
+        isDeleted: false
       };
 
       createStub.returns(fakeEvent);
 
       let err;
       try {
-        await EventService.createOne(fakeEvent);
+        await eventService.createOne(username, fakeEvent);
       } catch (error) {
         err = error;
       }
@@ -209,78 +236,81 @@ describe('Events Service Tests', () => {
     });
   });
 
-  describe('Modify an Event', () => {
-    it('modify an event', async function () {
+  describe('Update an Event', () => {
+    it('update an event', async function () {
       const id = faker.database.mongodbObjectId(),
         fakeEvent = {
           _id: id,
-          userId: faker.database.mongodbObjectId(),
+          user: faker.name.fullName(),
           name: faker.name.firstName(),
           description: faker.lorem.paragraph(),
           startTime: new Date(randomDate.setMonth(3)),
           endTime: new Date(randomDate.setMonth(5)),
           reminderTime: new Date(randomDate.setMonth(2)),
           type: 'urgent',
-          repeat: 2,
-          restore: true
+          repeatEvery: 'day',
+          isDeleted: false
         };
 
-      findByIdAndUpdateStub.returns(fakeEvent);
-      const event = await EventService.modifyOne(id, fakeEvent);
+      findOneStub.returns(fakeEvent);
+      findOneAndUpdateStub.returns(fakeEvent);
+      const event = await eventService.updateOne(id, username, fakeEvent);
 
       expect(event._id).to.equal(id);
       expect(event.name).to.equal(fakeEvent.name);
       expect(event.type).to.equal('urgent');
-      expect(event.restore).to.equal(true);
+      expect(event.isDeleted).to.equal(false);
     });
 
     it('throw error if event does not exist', async function () {
       const id = faker.database.mongodbObjectId(),
         fakeEvent = {
           _id: id,
-          userId: faker.database.mongodbObjectId(),
+          user: faker.name.fullName(),
           name: faker.name.firstName(),
           description: faker.lorem.paragraph(),
           startTime: new Date(randomDate.setMonth(3)),
           endTime: new Date(randomDate.setMonth(5)),
           reminderTime: new Date(randomDate.setMonth(2)),
           type: 'urgent',
-          repeat: 2,
-          restore: true
+          repeatEvery: 'day',
+          isDeleted: false
         };
 
-      findByIdAndUpdateStub.returns(null);
+      findOneStub.returns(null);
 
       let err;
       try {
-        await EventService.modifyOne(id, fakeEvent);
+        await eventService.updateOne(id, username, fakeEvent);
       } catch (error) {
         err = error;
       }
 
-      expect(err.message).to.equal(`No event found with id ${id} !`);
+      expect(err.message).to.equal('Event does not exist');
       expect(err.status).to.equal(404);
     });
 
     it('start time must be before end time', async function () {
-      const fakeEvent = {
-        _id: faker.database.mongodbObjectId(),
-        userId: faker.database.mongodbObjectId(),
-        name: faker.name.firstName(),
-        description: faker.lorem.paragraph(),
-        startTime: new Date(randomDate.setMonth(8)),
-        endTime: new Date(randomDate.setMonth(5)),
-        reminderTime: new Date(randomDate.setMonth(3)),
-        type: 'urgent',
-        repeat: 2,
-        restore: true
-      };
+      const id = faker.database.mongodbObjectId(),
+        fakeEvent = {
+          _id: faker.database.mongodbObjectId(),
+          user: faker.name.fullName(),
+          name: faker.name.firstName(),
+          description: faker.lorem.paragraph(),
+          startTime: new Date(randomDate.setMonth(8)),
+          endTime: new Date(randomDate.setMonth(5)),
+          reminderTime: new Date(randomDate.setMonth(3)),
+          type: 'urgent',
+          repeatEvery: 'day',
+          isDeleted: false
+        };
 
-      findByIdAndUpdateStub.returns(fakeEvent);
+      findOneStub.returns(fakeEvent);
+      findOneAndUpdateStub.returns(fakeEvent);
 
       let err;
       try {
-        await EventService.createOne(fakeEvent);
+        await eventService.updateOne(id, username, fakeEvent);
       } catch (error) {
         err = error;
       }
@@ -290,24 +320,26 @@ describe('Events Service Tests', () => {
     });
 
     it('start time must be in the future', async function () {
-      const fakeEvent = {
-        _id: faker.database.mongodbObjectId(),
-        userId: faker.database.mongodbObjectId(),
-        name: faker.name.firstName(),
-        description: faker.lorem.paragraph(),
-        startTime: faker.date.past(),
-        endTime: new Date(randomDate.setMonth(7)),
-        reminderTime: new Date(randomDate.setMonth(5)),
-        type: 'urgent',
-        repeat: 2,
-        restore: true
-      };
+      const id = faker.database.mongodbObjectId(),
+        fakeEvent = {
+          _id: faker.database.mongodbObjectId(),
+          user: faker.name.fullName(),
+          name: faker.name.firstName(),
+          description: faker.lorem.paragraph(),
+          startTime: faker.date.past(),
+          endTime: new Date(randomDate.setMonth(7)),
+          reminderTime: new Date(randomDate.setMonth(5)),
+          type: 'urgent',
+          repeatEvery: 'day',
+          isDeleted: false
+        };
 
-      findByIdAndUpdateStub.returns(fakeEvent);
+      findOneStub.returns(fakeEvent);
+      findOneAndUpdateStub.returns(fakeEvent);
 
       let err;
       try {
-        await EventService.createOne(fakeEvent);
+        await eventService.updateOne(id, username, fakeEvent);
       } catch (error) {
         err = error;
       }
@@ -317,24 +349,26 @@ describe('Events Service Tests', () => {
     });
 
     it('reminder time must be prior start time', async function () {
-      const fakeEvent = {
-        _id: faker.database.mongodbObjectId(),
-        userId: faker.database.mongodbObjectId(),
-        name: faker.name.firstName(),
-        description: faker.lorem.paragraph(),
-        startTime: new Date(randomDate.setMonth(4)),
-        endTime: new Date(randomDate.setMonth(7)),
-        reminderTime: new Date(randomDate.setMonth(5)),
-        type: 'urgent',
-        repeat: 2,
-        restore: true
-      };
+      const id = faker.database.mongodbObjectId(),
+        fakeEvent = {
+          _id: faker.database.mongodbObjectId(),
+          user: faker.name.fullName(),
+          name: faker.name.firstName(),
+          description: faker.lorem.paragraph(),
+          startTime: new Date(randomDate.setMonth(4)),
+          endTime: new Date(randomDate.setMonth(7)),
+          reminderTime: new Date(randomDate.setMonth(5)),
+          type: 'urgent',
+          repeatEvery: 'day',
+          isDeleted: false
+        };
 
-      findByIdAndUpdateStub.returns(fakeEvent);
+      findOneStub.returns(fakeEvent);
+      findOneAndUpdateStub.returns(fakeEvent);
 
       let err;
       try {
-        await EventService.createOne(fakeEvent);
+        await eventService.updateOne(id, username, fakeEvent);
       } catch (error) {
         err = error;
       }
@@ -349,102 +383,81 @@ describe('Events Service Tests', () => {
       const id = faker.database.mongodbObjectId(),
         fakeEvent = {
           _id: id,
-          userId: faker.database.mongodbObjectId(),
+          user: faker.name.fullName(),
           name: faker.name.firstName(),
           description: faker.lorem.paragraph(),
           startTime: new Date(randomDate.setMonth(3)),
           endTime: new Date(randomDate.setMonth(5)),
           reminderTime: new Date(randomDate.setMonth(2)),
           type: 'urgent',
-          repeat: 2,
-          restore: true
+          repeatEvery: 'day',
+          isDeleted: false
         };
 
-      findByIdAndDeleteStub.returns(fakeEvent);
-      const event = await EventService.deleteOne(id, fakeEvent);
+      findOneStub.returns(fakeEvent);
+      findOneAndUpdateStub.returns({ ...fakeEvent, isDeleted: true });
+      const event = await eventService.deleteOne(id, username);
 
-      expect(event).to.be.undefined;
+      expect(event._id).to.equal(id);
+      expect(event.isDeleted).to.equal(true);
     });
 
     it('throw error if event does not exist', async function () {
-      const id = faker.database.mongodbObjectId(),
-        fakeEvent = {
-          _id: id,
-          userId: faker.database.mongodbObjectId(),
-          name: faker.name.firstName(),
-          description: faker.lorem.paragraph(),
-          startTime: new Date(randomDate.setMonth(3)),
-          endTime: new Date(randomDate.setMonth(5)),
-          reminderTime: new Date(randomDate.setMonth(2)),
-          type: 'urgent',
-          repeat: 2,
-          restore: true
-        };
+      const id = faker.database.mongodbObjectId();
 
-      findByIdAndDeleteStub.returns(null);
+      findOneStub.returns(null);
 
       let err;
       try {
-        await EventService.deleteOne(id, fakeEvent);
+        await eventService.deleteOne(id, username);
       } catch (error) {
         err = error;
       }
 
-      expect(err.message).to.equal(`No event found with id ${id} !`);
+      expect(err.message).to.equal('Event does not exist');
       expect(err.status).to.equal(404);
     });
   });
 
-  describe('Reset an Event', () => {
-    it('reset an event', async function () {
+  describe('Restore an Event', () => {
+    it('restore an event', async function () {
       const id = faker.database.mongodbObjectId(),
         fakeEvent = {
           _id: id,
-          userId: faker.database.mongodbObjectId(),
+          user: faker.name.fullName(),
           name: faker.name.firstName(),
           description: faker.lorem.paragraph(),
           startTime: new Date(randomDate.setMonth(3)),
           endTime: new Date(randomDate.setMonth(5)),
           reminderTime: new Date(randomDate.setMonth(2)),
           type: 'urgent',
-          repeat: 2,
-          restore: true
+          repeatEvery: 'day',
+          isDeleted: true
         };
 
-      findByIdAndUpdateStub.returns(fakeEvent);
-      const event = await EventService.resetOne(id, fakeEvent);
+      findOneStub.returns(fakeEvent);
+      findOneAndUpdateStub.returns({ ...fakeEvent, isDeleted: false });
+      const event = await eventService.restoreOne(id, username);
 
       expect(event._id).to.equal(id);
       expect(event.name).to.equal(fakeEvent.name);
       expect(event.type).to.equal('urgent');
-      expect(event.restore).to.equal(true);
+      expect(event.isDeleted).to.equal(false);
     });
 
     it('throw error if event does not exist', async function () {
-      const id = faker.database.mongodbObjectId(),
-        fakeEvent = {
-          _id: id,
-          userId: faker.database.mongodbObjectId(),
-          name: faker.name.firstName(),
-          description: faker.lorem.paragraph(),
-          startTime: new Date(randomDate.setMonth(3)),
-          endTime: new Date(randomDate.setMonth(5)),
-          reminderTime: new Date(randomDate.setMonth(2)),
-          type: 'urgent',
-          repeat: 2,
-          restore: true
-        };
+      const id = faker.database.mongodbObjectId();
 
-      findByIdAndUpdateStub.returns(null);
+      findOneStub.returns(null);
 
       let err;
       try {
-        await EventService.resetOne(id, fakeEvent);
+        await eventService.restoreOne(id, username);
       } catch (error) {
         err = error;
       }
 
-      expect(err.message).to.equal(`No event found with id ${id} !`);
+      expect(err.message).to.equal('Event does not exist');
       expect(err.status).to.equal(404);
     });
   });
@@ -453,7 +466,9 @@ describe('Events Service Tests', () => {
 describe('Events Controller Tests', () => {
   let req,
     res,
-    id = faker.database.mongodbObjectId();
+    id = faker.database.mongodbObjectId(),
+    username = faker.name.fullName(),
+    eventController = new EventController();
 
   beforeEach(() => {
     res = { send: function () {} };
@@ -463,38 +478,38 @@ describe('Events Controller Tests', () => {
     const fakeEvents = [
       {
         _id: faker.database.mongodbObjectId(),
-        userId: faker.database.mongodbObjectId(),
+        user: faker.name.fullName(),
         name: faker.name.firstName(),
         description: faker.lorem.paragraph(),
         startTime: new Date(randomDate.setMonth(3)),
         endTime: new Date(randomDate.setMonth(5)),
         reminderTime: new Date(randomDate.setMonth(2)),
         type: 'urgent',
-        repeat: 2,
-        restore: true
+        repeatEvery: 'day',
+        isDeleted: false
       },
       {
         _id: faker.database.mongodbObjectId(),
-        userId: faker.database.mongodbObjectId(),
+        user: faker.name.fullName(),
         name: faker.name.firstName(),
         description: faker.lorem.paragraph(),
         startTime: new Date(randomDate.setMonth(3)),
         endTime: new Date(randomDate.setMonth(5)),
         reminderTime: new Date(randomDate.setMonth(2)),
         type: 'normal',
-        repeat: 3,
-        restore: false
+        repeatEvery: 'day',
+        isDeleted: true
       }
     ];
 
-    req = {};
+    req = { params: { user: username } };
     findStub.returns(fakeEvents);
     const mock = sinon.mock(res);
     mock.expects('send').once().withExactArgs({
       data: fakeEvents,
-      message: 'Successfully fetched all events!'
+      message: 'Fetched successfully'
     });
-    await EventsController.getAllEvents(req, res);
+    await eventController.getUserEvents(req, res);
 
     mock.verify();
   });
@@ -502,28 +517,25 @@ describe('Events Controller Tests', () => {
   it('return a single event by exact id', async function () {
     const fakeEvent = {
       _id: id,
-      userId: faker.database.mongodbObjectId(),
+      user: faker.name.fullName(),
       name: faker.name.firstName(),
       description: faker.lorem.paragraph(),
       startTime: new Date(randomDate.setMonth(3)),
       endTime: new Date(randomDate.setMonth(5)),
       reminderTime: new Date(randomDate.setMonth(2)),
       type: 'urgent',
-      repeat: 2,
-      restore: true
+      repeatEvery: 'day',
+      isDeleted: false
     };
 
-    req = { params: { id } };
-    findByIdStub.returns(fakeEvent);
+    req = { params: { user: username, id } };
+    findOneStub.returns(fakeEvent);
     const mock = sinon.mock(res);
-    mock
-      .expects('send')
-      .once()
-      .withExactArgs({
-        data: fakeEvent,
-        message: `Successfully fetched the event ${id}`
-      });
-    await EventsController.getOneEvent(req, res);
+    mock.expects('send').once().withExactArgs({
+      data: fakeEvent,
+      message: 'Fetched successfully'
+    });
+    await eventController.getUserEvent(req, res);
 
     mock.verify();
   });
@@ -531,57 +543,52 @@ describe('Events Controller Tests', () => {
   it('create a new event', async function () {
     const fakeEvent = {
       _id: id,
-      userId: faker.database.mongodbObjectId(),
+      user: faker.name.fullName(),
       name: faker.name.firstName(),
       description: faker.lorem.paragraph(),
       startTime: new Date(randomDate.setMonth(3)),
       endTime: new Date(randomDate.setMonth(5)),
       reminderTime: new Date(randomDate.setMonth(2)),
       type: 'urgent',
-      repeat: 2,
-      restore: true
+      repeatEvery: 'day',
+      isDeleted: false
     };
 
-    req = { body: fakeEvent };
+    req = { body: fakeEvent, params: { user: username } };
     createStub.returns(fakeEvent);
     const mock = sinon.mock(res);
-    mock
-      .expects('send')
-      .once()
-      .withExactArgs({
-        data: fakeEvent,
-        message: `Successfully created event ${id} !`
-      });
-    await EventsController.createEvent(req, res);
+    mock.expects('send').once().withExactArgs({
+      data: fakeEvent,
+      message: 'Created successfully'
+    });
+    await eventController.createEvent(req, res);
 
     mock.verify();
   });
 
-  it('modify an event', async function () {
+  it('update an event', async function () {
     const fakeEvent = {
       _id: id,
-      userId: faker.database.mongodbObjectId(),
+      user: faker.name.fullName(),
       name: faker.name.firstName(),
       description: faker.lorem.paragraph(),
       startTime: new Date(randomDate.setMonth(3)),
       endTime: new Date(randomDate.setMonth(5)),
       reminderTime: new Date(randomDate.setMonth(2)),
       type: 'urgent',
-      repeat: 2,
-      restore: true
+      repeatEvery: 'day',
+      isDeleted: false
     };
 
-    req = { body: fakeEvent, params: { id } };
-    findByIdAndUpdateStub.returns(fakeEvent);
+    req = { body: fakeEvent, params: { id, user: username } };
+    findOneStub.returns(fakeEvent);
+    findOneAndUpdateStub.returns(fakeEvent);
     const mock = sinon.mock(res);
-    mock
-      .expects('send')
-      .once()
-      .withExactArgs({
-        data: fakeEvent,
-        message: `Successfully updated event ${id} !`
-      });
-    await EventsController.modifyEvent(req, res);
+    mock.expects('send').once().withExactArgs({
+      data: fakeEvent,
+      message: 'Updated successfully'
+    });
+    await eventController.updateEvent(req, res);
 
     mock.verify();
   });
@@ -589,22 +596,23 @@ describe('Events Controller Tests', () => {
   it('delete an event', async function () {
     const fakeEvent = {
       _id: id,
-      userId: faker.database.mongodbObjectId(),
+      user: faker.name.fullName(),
       name: faker.name.firstName(),
       description: faker.lorem.paragraph(),
       startTime: new Date(randomDate.setMonth(3)),
       endTime: new Date(randomDate.setMonth(5)),
       reminderTime: new Date(randomDate.setMonth(2)),
       type: 'urgent',
-      repeat: 2,
-      restore: true
+      repeatEvery: 'day',
+      isDeleted: false
     };
 
-    req = { params: { id } };
-    findByIdAndDeleteStub.returns(fakeEvent);
+    req = { params: { id, user: username } };
+    findOneStub.returns(fakeEvent);
+    findOneAndUpdateStub.returns(fakeEvent);
     const mock = sinon.mock(res);
-    mock.expects('send').once().withExactArgs({ message: 'Successfully deleted event!' });
-    await EventsController.deleteEvent(req, res);
+    mock.expects('send').once().withExactArgs({ data: fakeEvent, message: 'Deleted successfully' });
+    await eventController.deleteEvent(req, res);
 
     mock.verify();
   });
@@ -612,28 +620,26 @@ describe('Events Controller Tests', () => {
   it('reset an event', async function () {
     const fakeEvent = {
       _id: id,
-      userId: faker.database.mongodbObjectId(),
+      user: faker.name.fullName(),
       name: faker.name.firstName(),
       description: faker.lorem.paragraph(),
       startTime: new Date(randomDate.setMonth(3)),
       endTime: new Date(randomDate.setMonth(5)),
       reminderTime: new Date(randomDate.setMonth(2)),
       type: 'urgent',
-      repeat: 2,
-      restore: true
+      repeatEvery: 'day',
+      isDeleted: false
     };
 
-    req = { params: { id }, body: fakeEvent };
-    findByIdAndUpdateStub.returns(fakeEvent);
+    req = { params: { id, user: username }, body: fakeEvent };
+    findOneStub.returns(fakeEvent);
+    findOneAndUpdateStub.returns(fakeEvent);
     const mock = sinon.mock(res);
-    mock
-      .expects('send')
-      .once()
-      .withExactArgs({
-        data: fakeEvent,
-        message: `Successfully updated event ${id} !`
-      });
-    await EventsController.resetEvent(req, res);
+    mock.expects('send').once().withExactArgs({
+      data: fakeEvent,
+      message: 'Restored successfully'
+    });
+    await eventController.restoreEvent(req, res);
 
     mock.verify();
   });
