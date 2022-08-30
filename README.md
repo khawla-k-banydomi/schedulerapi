@@ -10,7 +10,6 @@ on the Functionality of the application.
 - This application was created to allow me to keep track of my personal work agenda online, rather than having to keep track of it on paper or in a notebook, in order to write down tasks to be completed or meetings at work to which they must contribute; thus, this application will be very useful in the future.
 
 
-
 # Milestones ⏲️
 Different milestones have been established [Here](https://github.com/khawla-k-banydomi/schedulerapiCE/milestones).
 # Issues: ❗
@@ -36,8 +35,17 @@ It is important to notice that the user story shouldn't be closed until it is we
 [Here](https://gist.github.com/seanh/8a5b7b36d5c4fdfcfbd3b42506296968) there are several important things regarding the user-stories.
 
 
+#### [Entities to be deployed](https://github.com/khawla-k-banydomi/schedulerapiCE/tree/main/src/models):
+- [Event](https://github.com/khawla-k-banydomi/schedulerapiCE/blob/main/src/models/Event.js).
+- [Holiday](https://github.com/khawla-k-banydomi/schedulerapiCE/blob/main/src/models/Holiday.js).
+- [User](https://github.com/khawla-k-banydomi/schedulerapiCE/blob/main/src/models/User.js)
+
+#### Client:
+- myself(It is developed to manage my personal timeline)
+
+
 # Main classes and methods :
-These are the main [Classes and CRUD (Create Read Update Delete) operations](https://github.com/khawla-k-banydomi/schedulerapiCE/tree/main/src/controllers) 
+These are the main [Classes and CRUD (Create Read Update Delete) operations](https://github.com/khawla-k-banydomi/schedulerapiCE/tree/main/src/controllers) that reflected the user stories.
 
 It shows the interface of the class (functions with arguments that will have the appropriate type and number, but without any business logic or functionality).
 
@@ -54,16 +62,7 @@ It shows the interface of the class (functions with arguments that will have the
 - Empowered users. Increase productivity by providing cloud-based self-service options for users, such as portals, executive and operational dashboards.
 
 
-#### Entities to be deployed:
-- Events .
-- A set of Holidays.
-
-#### Client:
-- myself(It is developed to manage my personal timeline)
-
-
- 
- # Application Architecture 🏗️
+# Application Architecture 🏗️
 ### The first and most important step in software development is to select the Architecture; in this context I choose Layered architecture.
 
 Layered architecture is implemented strictly following the MVC approach. Moreover, business logic is 
@@ -86,10 +85,4 @@ Components within a specific layer only deal with logic specific to that layer.
 
 - Line-of-business apps that perform more than just CRUD operations.
 - New applications that must be developed quickly.
-- Teams composed of inexperienced developers who are unfamiliar with other architectures, but whose applications necessitate strict maintainability and testability standards
-
- 
- 
- 
-
-
+- Teams composed of inexperienced developers who are unfamiliar with other architectures, but whose applications necessitate strict maintainability and testability standards.
