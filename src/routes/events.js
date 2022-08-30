@@ -14,6 +14,6 @@ router.patch('/:id/:user', eventController.updateEvent);
 
 router.delete('/:id/:user', eventController.deleteEvent);
 
-router.patch('/:id/:user', eventController.restoreEvent);
+router.patch('/restore/:id/:user', eventController.restoreEvent);
 
 module.exports = router;
