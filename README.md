@@ -76,7 +76,8 @@ Components within a specific layer only deal with logic specific to that layer.
 #### I choose it since it has the following *advantages*:
 - High degree of testability Because components are associated with specific layers of the architecture,other layers can be mocked or stubbed, making this pattern relatively simple to test.
 - This pattern is so well known and is not overly complex to implement, it is a natural choice for most business-application development.
-- Additionally, because most companies develop applications by separating skill sets by layers, this pattern becomes a natural choice for most business-application development.
+- Additionally, because most companies develop applications by separating skill sets by layers, this pattern becomes a natural choice for most
+ business-application development.
 - Maintainable
 - Separate "roles" are simple to assign.
 - It is simple to update and improve layers separately.
