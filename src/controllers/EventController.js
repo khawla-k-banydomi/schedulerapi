@@ -5,51 +5,75 @@ class EventController {
 
   // As a user I can list my events, so that I can know their details
   getUserEvents = async (req, res) => {
-    const user = req.params.user;
-    const events = await this.eventService.getAll(user);
-    return res.send({ data: events, message: 'Fetched successfully' });
+    try {
+      const user = req.params.user;
+      const events = await this.eventService.getAll(user);
+      return res.send({ data: events, message: 'Fetched successfully' });
+    } catch (e) {
+      return res.send({ message: e.message, status: e.status });
+    }
   };
 
   // As a user I can fetch a single event, so that I can know its details
   getUserEvent = async (req, res) => {
-    const id = req.params.id,
-      user = req.params.user;
-    const event = await this.eventService.getOne(id, user);
-    return res.send({ data: event, message: 'Fetched successfully' });
+    try {
+      const id = req.params.id,
+        user = req.params.user;
+      const event = await this.eventService.getOne(id, user);
+      return res.send({ data: event, message: 'Fetched successfully' });
+    } catch (e) {
+      return res.send({ message: e.message, status: e.status });
+    }
   };
 
   // As a user I can create a new event, so that I can be notified with it
   createEvent = async (req, res) => {
-    const user = req.params.user,
-      eventObj = req.body;
-    const event = await this.eventService.createOne(user, eventObj);
-    res.send({ data: event, message: 'Created successfully' });
+    try {
+      const user = req.params.user,
+        eventObj = req.body;
+      const event = await this.eventService.createOne(user, eventObj);
+      res.send({ data: event, message: 'Created successfully' });
+    } catch (e) {
+      return res.send({ message: e.message, status: e.status });
+    }
   };
 
   // As a user I can list my events, so that I can manage them
   updateEvent = async (req, res) => {
-    const id = req.params.id,
-      user = req.params.user;
-    const updatedObj = req.body;
-    const event = await this.eventService.updateOne(id, user, updatedObj);
-    res.send({ data: event, message: 'Updated successfully' });
+    try {
+      const id = req.params.id,
+        user = req.params.user;
+      const updatedObj = req.body;
+      const event = await this.eventService.updateOne(id, user, updatedObj);
+      res.send({ data: event, message: 'Updated successfully' });
+    } catch (e) {
+      return res.send({ message: e.message, status: e.status });
+    }
   };
 
   // As a user I can restore a deleted event, so that I can reschedule it
   restoreEvent = async (req, res) => {
-    const id = req.params.id,
-      user = req.params.user;
-    const updatedObj = req.body;
-    const event = await this.eventService.resetOne(id, user, updatedObj);
-    res.send({ data: event, message: 'Restored successfully' });
+    try {
+      const id = req.params.id,
+        user = req.params.user;
+      const updatedObj = req.body;
+      const event = await this.eventService.restoreOne(id, user, updatedObj);
+      res.send({ data: event, message: 'Restored successfully' });
+    } catch (e) {
+      return res.send({ message: e.message, status: e.status });
+    }
   };
 
   // As a user I can delete events, so that I can manage them
   deleteEvent = async (req, res) => {
-    const id = req.params.id,
-      user = req.params.user;
-    await this.eventService.deleteOne(id, user);
-    res.send({ message: 'Deleted successfully' });
+    try {
+      const id = req.params.id,
+        user = req.params.user;
+      const event = await this.eventService.deleteOne(id, user);
+      res.send({ data: event, message: 'Deleted successfully' });
+    } catch (e) {
+      return res.send({ message: e.message, status: e.status });
+    }
   };
 }
 
