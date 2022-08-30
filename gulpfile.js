@@ -49,7 +49,7 @@ gulp.task('build', function () {
 //   return await console.log('Gulp Tasks are working!!');
 // });
 
-// server task
+ server task
 gulp.task('nodemon', function () {
   nodemon({
     script: 'app.js',
@@ -60,7 +60,7 @@ gulp.task('nodemon', function () {
   });
 });
 
-// run tests task
+ run tests task
 gulp.task('test', async () => {
   return await gulp.src(['test/*.js']).pipe(
     mocha({
@@ -69,15 +69,18 @@ gulp.task('test', async () => {
     })
   );
 });
+*/
 
 // watch server
-gulp.task('watch', function () {
-  gulp.watch('app/**/*.js', ['bundle-watch']);
-  gulp.watch(paths.copyFromAppDir, { cwd: 'app' }, ['copy-watch']);
-  gulp.watch('app/**/*.less', ['less-watch']);
+//gulp.task('watch', function () {
+// gulp.watch('app/**/*.js', ['bundle-watch']);
+//gulp.watch(paths.copyFromAppDir, { cwd: 'app' }, ['copy-watch']);
+// gulp.watch('app/**/*.less', ['less-watch']);
 });
+//
 
-// start node server
+
+/* start node server
 gulp.task('start', function (cb) {
   exec('node app.js', function (err, stdout, stderr) {
     console.log(stdout);
@@ -85,4 +88,5 @@ gulp.task('start', function (cb) {
     cb(err);
   });
 });
+
 */
