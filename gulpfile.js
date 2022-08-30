@@ -1,4 +1,31 @@
-var gulp = require('gulp'),
+var gulp = require('gulp');
+
+function install(cb) {
+  var child_process = require('child_process');
+  child_process.execSync('npm install', { stdio: [0, 1, 2] });
+  cb();
+}
+
+function testRun(cb) {
+  const gulp = require('gulp');
+  const mocha = require('gulp-mocha');
+  const babel = require('babel-register');
+  gulp.src(['test/*.js']).pipe(
+    mocha({
+      compilers: babel,
+      exit: true
+    })
+  );
+  cb();
+}
+
+exports.test = gulp.series(install, testRun);
+
+
+
+
+
+/* var gulp = require('gulp'),
   mocha = require('gulp-mocha'),
   babel = require('babel-register');
 var run = require('gulp-run');
@@ -58,3 +85,4 @@ gulp.task('start', function (cb) {
     cb(err);
   });
 });
+*/
