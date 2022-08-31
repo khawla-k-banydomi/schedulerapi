@@ -141,6 +141,10 @@ Any of them can be used in conjunction with Chai, but the Chai + Mocha combinati
 
 <img src="https://github.com/khawla-k-banydomi/schedulerapiCE/blob/main/doc/unit%20test%202.png" width="1000" height="700">
 
+<img src="https://github.com/khawla-k-banydomi/schedulerapiCE/blob/main/doc/unit%20test%203.png" width="1000" height="700">
+
+
+
 ---
 # [Test-milestone:Completed](https://github.com/khawla-k-banydomi/schedulerapiCE/milestone/5)
 
