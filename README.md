@@ -46,24 +46,32 @@ Any of them can be used in conjunction with Chai, but the Chai + Mocha combinati
 - There are several tasks in the [test folder](https://github.com/khawla-k-banydomi/schedulerapiCE/blob/main/test) that could be tested which are the following:
 
 Events Service Tests
+
     List Events
       ✓ return all events
     Single Event
       ✓ return an event by id
       ✓ throw an not found error if id does not match
+
+
     Create an Event
+    
       ✓ create an event
       ✓ not authenticated user can not create a new event
       ✓ start time must be before end time
       ✓ start time must be in the future
       ✓ reminder time must be prior start time
+      
     Update an Event
+    
       ✓ update an event
       ✓ throw error if event does not exist
       ✓ start time must be before end time
       ✓ start time must be in the future
       ✓ reminder time must be prior start time
+      
     Delete an Event
+    
       ✓ delete an event
       ✓ throw error if event does not exist
     Restore an Event
@@ -71,6 +79,7 @@ Events Service Tests
       ✓ throw error if event does not exist
 
   Events Controller Tests
+  
     ✓ return a list of events
     ✓ return a single event by exact id
     ✓ create a new event
@@ -79,6 +88,7 @@ Events Service Tests
     ✓ reset an event
 
   Holidays Service Tests
+  
     List Holidays
       ✓ return all holidays
     Single Holiday
@@ -95,6 +105,7 @@ Events Service Tests
       ✓ throw error if holiday does not exist
 
   Holidays Controller Tests
+  
     ✓ return a list of holidays
     ✓ return a single holiday by exact id
     ✓ create a new fixed-day holiday
