@@ -40,12 +40,13 @@ Any of them can be used in conjunction with Chai, but the Chai + Mocha combinati
 <br>
 
 ---
-## [Importante]()
+## Importante
+
 ### Sometimes it is a must to clean the (npm) cache on you computer before running the test to avoid any sudden error, you can force clear the cache by running: [npm cache clear --force](https://coder-coder.com/npm-clear-cache/#:~:text=Run%3A%20%E2%80%9Cnpm%20cache%20clean%20%E2%80%93force%E2%80%9D&text=are%20both%20not%20working%20and,npm%20cache%20on%20your%20computer.), this will force delete the npm cache on your computer.
 
 ## To run the test we can write down the following command:
 
-### [gulp test]()
+### [gulp test](https://tobythetesterblog.wordpress.com/2016/01/03/using-gulp-for-testing/comment-page-1/)
 
 - There are several tasks in the [test folder](https://github.com/khawla-k-banydomi/schedulerapiCE/blob/main/test) that could be tested which are the following:
 
