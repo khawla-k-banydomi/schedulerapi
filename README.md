@@ -45,16 +45,18 @@ Any of them can be used in conjunction with Chai, but the Chai + Mocha combinati
 
 - There are several tasks in the [test folder](https://github.com/khawla-k-banydomi/schedulerapiCE/blob/main/test) that could be tested which are the following:
 
-Events Service Tests
+[Event Entity](https://github.com/khawla-k-banydomi/schedulerapiCE/blob/main/test/api_event.js)
 
-    List Events
+[Events Service Tests]()
+
+    [List Events]()
       ✓ return all events
     Single Event
       ✓ return an event by id
       ✓ throw an not found error if id does not match
 
 
-    Create an Event
+    [Create an Event]()
     
       ✓ create an event
       ✓ not authenticated user can not create a new event
@@ -62,7 +64,7 @@ Events Service Tests
       ✓ start time must be in the future
       ✓ reminder time must be prior start time
       
-    Update an Event
+    [Update an Event]()
     
       ✓ update an event
       ✓ throw error if event does not exist
@@ -70,7 +72,7 @@ Events Service Tests
       ✓ start time must be in the future
       ✓ reminder time must be prior start time
       
-    Delete an Event
+    [Delete an Event]()
     
       ✓ delete an event
       ✓ throw error if event does not exist
@@ -78,7 +80,7 @@ Events Service Tests
       ✓ restore an event
       ✓ throw error if event does not exist
 
-  Events Controller Tests
+  [Events Controller Tests]()
   
     ✓ return a list of events
     ✓ return a single event by exact id
@@ -87,7 +89,9 @@ Events Service Tests
     ✓ delete an event
     ✓ reset an event
 
-  Holidays Service Tests
+  [Holiday Entity](https://github.com/khawla-k-banydomi/schedulerapiCE/blob/main/test/api_holiday.js)
+
+  [Holidays Service Tests]()
   
     List Holidays
       ✓ return all holidays
@@ -104,7 +108,7 @@ Events Service Tests
       ✓ delete an holiday
       ✓ throw error if holiday does not exist
 
-  Holidays Controller Tests
+  [Holidays Controller Tests]()
   
     ✓ return a list of holidays
     ✓ return a single holiday by exact id
@@ -113,13 +117,16 @@ Events Service Tests
     ✓ update an holiday
     ✓ delete an holiday
 
-  Users Service Tests
+  [User Entity](https://github.com/khawla-k-banydomi/schedulerapiCE/blob/main/test/api_user.js)
+  
+  [Users Service Tests]()
     ✓ return single user
     ✓ create a new user
 
-  Users Controller Tests
+  [Users Controller Tests]()
     ✓ return the user profile
     ✓ register a new user
+
 
 - The following screen-shot shows the whole result after run :[gulp test]()
 
