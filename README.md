@@ -41,7 +41,7 @@ Any of them can be used in conjunction with Chai, but the Chai + Mocha combinati
 
 ---
 ## [Importante]()
-##Sometimes it is a must to clean the (npm) cache on you computer before running the test to avoid any sudden error, you can force clear the cache by running: [npm cache clear --force](https://coder-coder.com/npm-clear-cache/#:~:text=Run%3A%20%E2%80%9Cnpm%20cache%20clean%20%E2%80%93force%E2%80%9D&text=are%20both%20not%20working%20and,npm%20cache%20on%20your%20computer.), this will force delete the npm cache on your computer.
+### Sometimes it is a must to clean the (npm) cache on you computer before running the test to avoid any sudden error, you can force clear the cache by running: [npm cache clear --force](https://coder-coder.com/npm-clear-cache/#:~:text=Run%3A%20%E2%80%9Cnpm%20cache%20clean%20%E2%80%93force%E2%80%9D&text=are%20both%20not%20working%20and,npm%20cache%20on%20your%20computer.), this will force delete the npm cache on your computer.
 
 ## To run the test we can write down the following command:
 
