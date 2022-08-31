@@ -45,7 +45,7 @@ Any of them can be used in conjunction with Chai, but the Chai + Mocha combinati
 
 - There are several tasks in the [test folder](https://github.com/khawla-k-banydomi/schedulerapiCE/blob/main/test) that could be tested which are the following:
 
-[Event Entity](https://github.com/khawla-k-banydomi/schedulerapiCE/blob/main/test/api_event.js)
+# [Event Entity](https://github.com/khawla-k-banydomi/schedulerapiCE/blob/main/test/api_event.js)
 
 [Events Service Tests]()
 
@@ -89,7 +89,7 @@ Any of them can be used in conjunction with Chai, but the Chai + Mocha combinati
     ✓ delete an event
     ✓ reset an event
 
-  [Holiday Entity](https://github.com/khawla-k-banydomi/schedulerapiCE/blob/main/test/api_holiday.js)
+  # [Holiday Entity](https://github.com/khawla-k-banydomi/schedulerapiCE/blob/main/test/api_holiday.js)
 
   [Holidays Service Tests]()
   
@@ -117,7 +117,7 @@ Any of them can be used in conjunction with Chai, but the Chai + Mocha combinati
     ✓ update an holiday
     ✓ delete an holiday
 
-  [User Entity](https://github.com/khawla-k-banydomi/schedulerapiCE/blob/main/test/api_user.js)
+ # [User Entity](https://github.com/khawla-k-banydomi/schedulerapiCE/blob/main/test/api_user.js)
   
   [Users Service Tests]()
     ✓ return single user
