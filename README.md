@@ -40,6 +40,11 @@ Any of them can be used in conjunction with Chai, but the Chai + Mocha combinati
 <br>
 
 ---
+## [Importante]()
+##[Sometimes it is a must to clean the (npm) cache on you computer before running the test to avoid any sudden error;
+## you can force clear the cache by running: npm cache clean --force or npm cache clean -f . 
+## This will force delete the npm cache on your compute]()
+
 ## To run the test we can write down the following command:
 ### [gulp test]()
 
