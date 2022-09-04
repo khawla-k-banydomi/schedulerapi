@@ -1,38 +1,40 @@
-🐋 Milestone 6 : Docker Compose 🐋
+# 🐋 Milestone 6 : Docker Compose 🐋
 
-[IMPORTANTE](https://jj-github-io.translate.goog/CC/documentos/proyecto/6.Compose.html?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ar&_x_tr_pto=op): This is the 6th and final milestone regarding the development of [my project](composition of services)
+
+- [IMPORTANTE](): This is the 6th and final milestone regarding the development of [my project]((https://github.com/khawla-k-banydomi/schedulerapiCE)) : [composition of services](https://jj-github-io.translate.goog/CC/documentos/proyecto/6.Compose.html?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ar)
 
 For the composition of the cluster, it has been determined that at least 2 containers are needed:
 
     Node.js server and Mongo database
 
-# In this milestone the most important file is [docker-compose.yml](https://github.com/khawla-k-banydomi/schedulerapiCE/blob/main/docker-compose.yml) which has been created and contains the following:
+
+- In this milestone the most important file is [docker-compose.yml](https://github.com/khawla-k-banydomi/schedulerapiCE/blob/main/docker-compose.yml) which has been created and contains the following:
 
 
-    version: '3.4'
 
-    services:
-    schedulerrestfulapi:
-     image: schedulerrestfulapi
+       version: '3.4'
+       services:
+        schedulerrestfulapi:
+        image: schedulerrestfulapi
         build:
         context: .
         dockerfile: ./Dockerfile
-    environment:
-      NODE_ENV: production
-    ports:
+        environment:
+        NODE_ENV: production
+        ports:
       - 8080:8080
-    volumes:
+        volumes:
       - .:/usr/src/app
-    links:
+        links:
       - mongodb
-    mongodb:
-      image: mongo:latest
-      ports: 
-      - 32110:32110
-    volumes:
-      - data:/data/db
-volumes:
-  data: 
+        mongodb:
+        image: mongo:latest
+        ports: 
+        - 32110:32110
+        volumes:
+        - data:/data/db
+        volumes:
+        data: 
   
 As you can see, 2 services are included, which are the 2 containers that we are going to create. 
 For the first, the container has been chosen mongodbas a NoSQL DB, since we needed a DB of this type because of how the project was configured from the beginning, and mongoit is one of the databases NoSQL more famous and with more documentation.
@@ -77,4 +79,34 @@ I can provide the answers to the following Questions:
 - ❓ What are the main tests?
 - 📔 Testing the CRUD operations for events and holidays
 
+
+- Before hitting the command : docker-compose up it is important to write down the following command:
+### sudo npm dudupe
+
+- The following demonestrate what happen exactly:
+
+### Docker-6-dedupe : To install NPM in a right way ; this command searches the local package tree and attempts to simplify the overall structure by moving dependencies further up the tree.
+
+<img src="https://github.com/khawla-k-banydomi/schedulerapiCE/blob/main/doc/Docker-6-dedupe.png" width="1000" height="700">
+
+### Docker-6-DB: Here the App connected successfuly to the DB.
+
+<img src="https://github.com/khawla-k-banydomi/schedulerapiCE/blob/main/doc/Docker-6-DB.png" width="1000" height="700">
+
+### Docker-6-Tests: Here some tests are passed based on the code.
+
+
+<img src="https://github.com/khawla-k-banydomi/schedulerapiCE/blob/main/doc/Docker-6-Tests.png" width="1000" height="700">
+
+
+### Docker-6-Passing: The total number of passing tests.
+
+<img src="https://github.com/khawla-k-banydomi/schedulerapiCE/blob/main/doc/Docker-6-Passing.png" width="1000" height="700">
+
+
+
+## The completion of the project:
+This is the last miletsone in which the server as well the data-base are running and manipulate the tests using : Docker-compose up command.
+
+## [The completion of the milestone](https://github.com/khawla-k-banydomi/schedulerapiCE/milestone/9)
 
