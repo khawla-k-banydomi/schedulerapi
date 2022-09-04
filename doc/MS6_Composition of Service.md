@@ -1,7 +1,21 @@
 # 🐋 Milestone 6 : Docker Compose 🐋
 
 
-- [IMPORTANTE](): This is the 6th and final milestone regarding the development of [my project]((https://github.com/khawla-k-banydomi/schedulerapiCE)) : [composition of services](https://jj-github-io.translate.goog/CC/documentos/proyecto/6.Compose.html?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ar)
+- [IMPORTANTE](): This is the 6th and final milestone regarding the development of [my project]((https://github.com/khawla-k-banydomi/schedulerapiCE)) : [composition of services](https://jj-github-io.translate.goog/CC/documentos/proyecto/6.Compose.html?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ar).
+
+# Main Repository For The Subject
+- To see How I configure my Github account Please Go [Here](https://github.com/khawla-k-banydomi/schedulerapiCE/blob/main/doc/Configuration.md). 🔧
+- To see the First Milestone (hito-0) and To Take a tour around the Application That I want to develop please Go [Here](https://github.com/khawla-k-banydomi/schedulerapiCE/blob/main/doc/Description.md). 🗓️
+- To see full descriptive document for the architecture and tools that I already and will use during the development check this [Document](https://github.com/khawla-k-banydomi/schedulerapiCE/blob/main/doc/Architecture.md) 📔
+- To see the Second Milestone (hito-1) and To take a tour around milestones and issues regarding the application please Go [Here](https://github.com/khawla-k-banydomi/schedulerapiCE/blob/main/doc/MS1_Specifying%20and%20planning%20the%20project.md). 🗒️
+- To see the Third Milestone (hito-2) please Go [Here](https://github.com/khawla-k-banydomi/schedulerapiCE/blob/main/doc/MS2_Testing.md). 📓
+- To see the Fourth Milestone (hito-3) please Go [Here](https://github.com/khawla-k-banydomi/schedulerapiCE/blob/main/doc/MS3_Docker-documentation.md). 📓
+- To see the Fifth Milestone (hito-4) please Go [Here](https://github.com/khawla-k-banydomi/schedulerapiCE/blob/main/doc/MS4_CI.md). 📓
+- To see the Sixth Milestone (hito-5) please Go [Here](https://github.com/khawla-k-banydomi/schedulerapiCE/blob/main/doc/MS5_Design%20and%20test%20of%20a%20microservice.md). 📓
+
+- There are several  [issues](https://github.com/khawla-k-banydomi/schedulerapiCE/issues) regarding testing milestone.
+---
+
 
 For the composition of the cluster, it has been determined that at least 2 containers are needed:
 
