@@ -1,24 +1,24 @@
 
 # Micro-services Justification
 
-- To see How I configure my Github account Please Go [Here](https://github.com/khawla-k-banydomi/schedulerapi/blob/main/doc/Configuration.md). 🔧
+- To see How I configure my Github account Please Go [Here](https://github.com/khawla-k-banydomi/schedulerapiCE/blob/main/doc/Configuration.md). 🔧
 
-- To see full descriptive document for the architecture and tools that I already and will use during the development check this [Document](https://github.com/khawla-k-banydomi/schedulerapi/blob/main/doc/Architecture.md) 📔
-- To see the First Milestone (hito-0) and To Take a tour around the Application That I want to develop please Go [Here](https://github.com/khawla-k-banydomi/schedulerapi/blob/main/doc/MS0_Description.md). 🗓️
+- To see full descriptive document for the architecture and tools that I already and will use during the development check this [Document](https://github.com/khawla-k-banydomi/schedulerapiCE/blob/main/doc/Architecture.md) 📔
+- To see the First Milestone (hito-0) and To Take a tour around the Application That I want to develop please Go [Here](https://github.com/khawla-k-banydomi/schedulerapiCE/blob/main/doc/MS0_Description.md). 🗓️
 
-- To see the Second Milestone (hito-1) and To take a tour around milestones and issues regarding the application please Go [Here](https://github.com/khawla-k-banydomi/schedulerapi/blob/main/doc/MS1_Specifying%20and%20planning%20the%20project.md). 🗒️
+- To see the Second Milestone (hito-1) and To take a tour around milestones and issues regarding the application please Go [Here](https://github.com/khawla-k-banydomi/schedulerapiCE/blob/main/doc/MS1_Specifying%20and%20planning%20the%20project.md). 🗒️
 
-- To see the Third Milestone (hito-2) and To take a tour around testing in the context of our application please Go [Here](https://github.com/khawla-k-banydomi/schedulerapi/blob/main/doc/MS2_Testing.md). 🗒️
+- To see the Third Milestone (hito-2) and To take a tour around testing in the context of our application please Go [Here](https://github.com/khawla-k-banydomi/schedulerapiCE/blob/main/doc/MS2_Testing.md). 🗒️
 
-- To see the Fourth Milestone (hito-3) and To take a tour around Docker in the context of our application please Go [Here](https://github.com/khawla-k-banydomi/schedulerapi/blob/main/doc/MS3_Docker-documentation.md). 🗒️
+- To see the Fourth Milestone (hito-3) and To take a tour around Docker in the context of our application please Go [Here](https://github.com/khawla-k-banydomi/schedulerapiCE/blob/main/doc/MS3_Docker-documentation.md). 🗒️
 
-- To see the Fifth Milestone (hito-4) and To take a tour around CI in the context of our application please Go [Here](https://github.com/khawla-k-banydomi/schedulerapi/blob/main/doc/MS4_CI.md)
+- To see the Fifth Milestone (hito-4) and To take a tour around CI in the context of our application please Go [Here](https://github.com/khawla-k-banydomi/schedulerapiCE/blob/main/doc/MS4_CI.md)
 - 
-- To see the complete description of the user stories please Go [Here](https://github.com/khawla-k-banydomi/schedulerapi/blob/main/doc/User-Stories.md). 📓
+- To see the complete description of the user stories please Go [Here](https://github.com/khawla-k-banydomi/schedulerapiCE/blob/main/doc/User-Stories.md). 📓
 
 > This milestone is responsible for what so called as a micro-services which can be defined as the small and a single service which comes from distributed computing architecture which in turns, connects many small services,it can be delivered via an (API) application programming interface..[Read more Here](https://www.bmc.com/blogs/microservice-vs-api/#:~:text=A%20microservice%20is%20a%20small,application%20programming%20interface%20(API)).
 
-- There are a serveral frameworks for building an API and microservice in the context of nodejs language; however in my case I am going to mention these frameworks and try to concentrate and compare between two of them which might be considered as the most popular frameworks..Hapi,Restify,Expressjs,Sailsjs,Action Her,LoopBack,Feathersjs,Adonisjs,Totaljs,moleculer,Fastify, Polka and Koa can be considered are the most recent framework that can be used in building nodejs microservice API. 
+- There are a several frameworks for building an API and microservice in the context of nodejs language; however in my case I am going to mention these frameworks and try to concentrate and compare between two of them which might be considered as the most popular frameworks..Hapi,Restify,Express Js,Sailsjs,Action Her,LoopBack,Feathersjs,Adonisjs,Total Js,molecular,Fastify, Polka and Koa can be considered are the most recent framework that can be used in building nodejs microservice API. 
 
 On the one hand,Express is the most widely used and supported. In fact, the majority of other frameworks attempt to imitate their philosophy. On the other hand, because it is such a comprehensive framework, it is dependent on many modules and is somewhat heavy.
 
@@ -32,11 +32,11 @@ Polka and Koa are the two frameworks that have been tested. We implement the boo
 
 Differences
 
-Polka adheres to the Express syntax in terms of request and response format, with an object containing request information and another containing response information that we can modify (req, res). In the case of Koa, everything is contained within an object known as the "context" (ctx).
+Polka adheres to the Express syntax in terms of request and response format, with an object containing request information and another containing response information that can be modified (req, res). In the case of Koa, everything is contained within an object known as the "context" (ctx).
 As we can see, there is no distinction in Polka between the router that manages the routes and the application or server (the routes hang directly from the application). In the case of Koa, if we have a module (which is not included in the framework's core) to create a router and manage the routes.
 We have a method allowedMethods () in the router Koa that will allow the application to detect which methods and routes are defined in order to throw the corresponding error if the client departs from the established routes.
 In general, Koa has more support (due to a larger community) and framework-specific plugins (body-parsers, json, loggers, etc.), whereas Polka does not.
-In terms of performance, some small benchmarking tests were carried out using the tool wrk. In general, both performed quite similarly in the executions carried out.
+In terms of performance, some small benchmarking tests were carried out using the tool. In general, both performed quite similarly in the executions carried out.
 
 
 Conclusions and options
@@ -91,21 +91,21 @@ Below I indicate which routes (method used, the route in parentheses and / or pa
 
 # Structuring the tests for API
 
-- We have three differentiated routs:
-# - [api_event.js](https://github.com/khawla-k-banydomi/schedulerapi/blob/main/test/api_event.js):
+- We have three differentiated routes:
+# - [api_event.js](https://github.com/khawla-k-banydomi/schedulerapiCE/blob/main/test/api_event.js):
 which should test the GET,POST, return 200 if ok,return 404 if not
 
-# - [api_index.js](https://github.com/khawla-k-banydomi/schedulerapi/blob/main/test/api_index.js):
+# - [api_holiday.js](https://github.com/khawla-k-banydomi/schedulerapiCE/blob/main/test/api_holiday.js):
 which should test GET for the index, return 200 if ok, return 404 if not.
 
-# - [api_user.js](https://github.com/khawla-k-banydomi/schedulerapi/blob/main/test/api_user.js):
+# - [api_user.js](https://github.com/khawla-k-banydomi/schedulerapiCE/blob/main/test/api_user.js):
 which should test GET for the user, return 200 if ok, return 404 if not.
 
 
 
 # Designed errors and exceptions
 
-To manage and control the possible errors that arise in the application, I create a generic exception that includes the name to identify the "type" of exception which it might exist as well an informational message. The exception is defined as a function in exception.js :
+To manage and control the possible errors that arise in the application, I create a generic exception that includes the name to identify the "type" of exception which might exist as well as an informational message. The exception is defined as a function in exception.js :
 ```
 function Exception(name, msg){
     this.name = name;
@@ -125,7 +125,7 @@ now I decided to set two types of exceptions:
 ## To sum up we have the following :
 
 ```
-# Nodejs, ExpressJs and Mongodb is used to build the restful api;
+# Nodejs, ExpressJs and Mongodb are used to build the restful api;
 -  Nodejs is used to build scalable network applications using its event driven approach which makes the API development fast and scalable.
 
 # Following endpoints are implemented;
@@ -144,7 +144,7 @@ now I decided to set two types of exceptions:
 - gulp watch -> to watch the app
 - gulp start -> to start the app
 
-# morgan logger is used which is a middleware for nodejs
+# morgan logger is used which is a middleware for node js
 
 # Added config by using .env file ;
 - process.env.PORT
@@ -156,3 +156,6 @@ now I decided to set two types of exceptions:
 - [Tutorial provided by Prof.Claudia](https://restfulapi.net/rest-api-design-tutorial-with-example/)
 - [Tutorial related to the subject-'Temas'](http://jj.github.io/CC/documentos/temas/Microservicios.html)
 - [Good practices must be followed when building an API](https://stackoverflow.blog/2020/03/02/best-practices-for-rest-api-design/)
+
+
+
