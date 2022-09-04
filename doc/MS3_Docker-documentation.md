@@ -1,17 +1,17 @@
 
 # Docker Justification
 
-- To see How I configure my Github account Please Go [Here](https://github.com/khawla-k-banydomi/ActivityScheduler/blob/main/doc/Configuration.md). 🔧
-- To see full descriptive document for the architecture and tools that I already and will use during the development check this [Document](https://github.com/khawla-k-banydomi/ActivityScheduler/blob/main/doc/Architecture.md) 📔
-- To see the First Milestone (hito-0) and To Take a tour around the Application That I want to develop please Go [Here](https://github.com/khawla-k-banydomi/ActivityScheduler/blob/main/doc/MS0_Description.md). 🗓️
+- To see How I configure my Github account Please Go [Here](https://github.com/khawla-k-banydomi/schedulerapiCE/blob/main/doc/Configuration.md). 🔧
+- To see full descriptive document for the architecture and tools that I already and will use during the development check this [Document](https://github.com/khawla-k-banydomi/schedulerapiCE/blob/main/doc/Architecture.md) 📔
+- To see the First Milestone (hito-0) and To Take a tour around the Application That I want to develop please Go [Here](https://github.com/khawla-k-banydomi/schedulerapiCE/blob/main/doc/MS0_Description.md). 🗓️
 
-- To see the Second Milestone (hito-1) and To take a tour around milestones and issues regarding the application please Go [Here](https://github.com/khawla-k-banydomi/ActivityScheduler/blob/main/doc/MS1_Specifying%20and%20planning%20the%20project.md). 🗒️
-- To see the Third Milestone (hito-2) and To take a tour around testing in the context of our application please Go [Here](https://github.com/khawla-k-banydomi/ActivityScheduler/blob/main/doc/MS2_Testing.md). 🗒️
-- To see the complete description of the user stories please Go [Here](https://github.com/khawla-k-banydomi/ActivityScheduler/blob/main/doc/User-Stories.md). 📓
-- There are several unwanted issues that will be colsed and taged as removed.
+- To see the Second Milestone (hito-1) and To take a tour around milestones and issues regarding the application please Go [Here](https://github.com/khawla-k-banydomi/schedulerapiCE/blob/main/doc/MS1_Specifying%20and%20planning%20the%20project.md). 🗒️
+- To see the Third Milestone (hito-2) and To take a tour around testing in the context of our application please Go [Here](https://github.com/khawla-k-banydomi/schedulerapiCE/blob/main/doc/MS2_Testing.md). 🗒️
+- To see the complete description of the user stories please Go [Here](https://github.com/khawla-k-banydomi/schedulerapiCE/blob/main/doc/User-Stories.md). 📓
+- There are several unwanted issues that will be closed and tagged as removed.
 ---
 
-## [Why Docker?](https://github.com/khawla-k-banydomi/ActivityScheduler/blob/main/doc/Docker.md)
+## [Why Docker?](https://github.com/khawla-k-banydomi/schedulerapiCE/blob/main/doc/Docker.md)
 
 ### This is the Document for the Third-milestone which is the [Docker](https://jj.github.io/CC/documentos/proyecto/2021/3.Docker) milestone.
 - To sum up I have to add the following features:<br>
@@ -24,15 +24,15 @@
 I will also show the different Dockerfiles that have been tested and their structures.
 
 # Images:
-on the one hand There are several variations and possibilities to choose an image in our Dockerfile . All distributions contains images for Docker (Fedora, CentOS, Ubuntu ..)
+On the one hand There are several variations and possibilities to choose an image in our Dockerfile . All distributions contain images for Docker (Fedora, CentOS, Ubuntu ..)
 as well, each of them have different versions. side by side, we also find official images of the different programming languages(python,java) and especially for node js that are already 
 installed and can be used.
 
  At the end I have found the following options:
 
    - I will use distribution with a "complete" installation, especially Ubuntu, since it can be considered as one of the most used and supported OSs
-   in the current era. there are several versions that Ubuntu might provides us with but at then I choose Focal .
-   - It is important to try a "light" image that brings enough to work and it necessary for our project to work properly.
+   in the current era. There are several versions that Ubuntu might provide us with but at then I choose Focal .
+   - It is important to try a "light" image that brings enough to work and it is necessary for our project to work properly.
    This will give us an optimized and light docker. in this context I try to use Alpine since it seems to be the most standardized.
    - In regard to the language , I think it might be more convenient to try an official image of the language so that I have to use the official image for the ( Node.js )
    - As I said I am trying to optimize the container, so that I will use Alpine's version; there are several versions for Alpine the are also several versions for the language 
@@ -111,9 +111,9 @@ Finally I decide to stay with Node-Alpine for the following reasons:
 - The resulting Dockerfile is simpler.
 - The image is developed and maintained by the Node.js Docker Team , who optimize and adapt the images so that the language works as well as possible.
 
-# FOR THE COMPARISON PURPOSE WE USE THE FOLLOWING SCREEN SHOT:
+# FOR THE COMPARISON PURPOSE WE USE THE FOLLOWING SCREENSHOT:
 
-<img src="https://github.com/khawla-k-banydomi/ActivityScheduler/blob/main/doc/Docker-images.png" width="1000" height="700">
+<img src="https://github.com/khawla-k-banydomi/schedulerapiCE/blob/main/doc/Docker-images.png" width="1000" height="700">
 
 
 
@@ -129,7 +129,9 @@ Finally I decide to stay with Node-Alpine for the following reasons:
 - It is good to see further information inside [This link](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/) .
 
 ---
-# [Test-milestone:Completed](https://github.com/khawla-k-banydomi/ActivityScheduler/milestone/5)
+# [Docker-Justification-milestone:Completed](https://github.com/khawla-k-banydomi/schedulerapiCE/milestone/5)
+
+
 
 
 
