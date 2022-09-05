@@ -1,4 +1,5 @@
 const HolidayService = require('../services/HolidayService');
+const mongoIdRegex = /^(?=[a-f\d]{24}$)(\d+[a-f]|[a-f]+\d)/i;
 
 class HolidayController {
   holidayService = new HolidayService();
@@ -7,10 +8,15 @@ class HolidayController {
   getUserHolidays = async (req, res) => {
     try {
       const user = req.params.user;
+
+      if (!user || user === 'null') return res.sendStatus(401);
+
       const holidays = await this.holidayService.getAll(user);
+      if (!isNaN(holidays)) return res.sendStatus(holidays);
+
       return res.send({ data: holidays, message: 'Fetched successfully' });
     } catch (e) {
-      return res.send({ message: e.message, status: e.status });
+      return res.sendStatus(500);
     }
   };
 
@@ -19,22 +25,36 @@ class HolidayController {
     try {
       const id = req.params.id,
         user = req.params.user;
+
+      if (!mongoIdRegex.test(id)) return res.sendStatus(400);
+      if (!user || user === 'null') return res.sendStatus(401);
+
       const holiday = await this.holidayService.getOne(id, user);
+      if (!isNaN(holiday)) return res.sendStatus(holiday);
+
       return res.send({ data: holiday, message: 'Fetched successfully' });
     } catch (e) {
-      return res.send({ message: e.message, status: e.status });
+      return res.sendStatus(500);
     }
   };
 
   // As a user I can create a new recurring fixed-week-day holiday, so that I can manage my holidays
   createFixedWeekDayHoliday = async (req, res) => {
     try {
-      const weekDayHoliday = { name: req.body.name, fixedWeekDay: req.body.fixedWeekDay },
+      const weekDayHoliday = {
+          name: req.body.name,
+          fixedWeekDay: req.body.fixedWeekDay
+        },
         user = req.params.user;
+
+      if (!user || user === 'null') return res.sendStatus(401);
+
       const holiday = await this.holidayService.createOne(user, weekDayHoliday);
+      if (!isNaN(holiday)) return res.sendStatus(holiday);
+
       res.send({ data: holiday, message: 'Created successfully' });
     } catch (e) {
-      return res.send({ message: e.message, status: e.status });
+      return res.sendStatus(500);
     }
   };
 
@@ -43,14 +63,19 @@ class HolidayController {
     try {
       const holidayRange = {
           name: req.body.name,
-          startDate: req.body.startDate,
-          endDate: req.body.endDate
+          timeStart: req.body.timeStart,
+          timeEnd: req.body.timeEnd
         },
         user = req.params.user;
+
+      if (!user || user === 'null') return res.sendStatus(401);
+
       const holiday = await this.holidayService.createOne(user, holidayRange);
+      if (!isNaN(holiday)) return res.sendStatus(holiday);
+
       res.send({ data: holiday, message: 'Created successfully' });
     } catch (e) {
-      return res.send({ message: e.message, status: e.status });
+      return res.sendStatus(500);
     }
   };
 
@@ -60,10 +85,16 @@ class HolidayController {
       const id = req.params.id,
         user = req.params.user,
         updatedObj = req.body;
+
+      if (!mongoIdRegex.test(id)) return res.sendStatus(400);
+      if (!user || user === 'null') return res.sendStatus(401);
+
       const holiday = await this.holidayService.updateOne(id, user, updatedObj);
+      if (!isNaN(holiday)) return res.sendStatus(holiday);
+
       res.send({ data: holiday, message: 'Updated successfully' });
     } catch (e) {
-      return res.send({ message: e.message, status: e.status });
+      return res.sendStatus(500);
     }
   };
 
@@ -72,10 +103,17 @@ class HolidayController {
     try {
       const id = req.params.id,
         user = req.params.user;
-      await this.holidayService.deleteOne(id, user);
+
+      if (!mongoIdRegex.test(id)) return res.sendStatus(400);
+      if (!user || user === 'null') return res.sendStatus(401);
+
+      const isError = await this.holidayService.deleteOne(id, user);
+      if (!isNaN(isError)) return res.sendStatus(isError);
+
       res.send({ message: 'Deleted successfully' });
     } catch (e) {
-      return res.send({ message: e.message, status: e.status });
+      console.log(e, 'Ffffffffffff');
+      return res.sendStatus(500);
     }
   };
 }
