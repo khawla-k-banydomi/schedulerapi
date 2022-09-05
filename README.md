@@ -1,154 +1,137 @@
+# 🐋 Milestone 6 : Docker Compose 🐋
+
+
+- [IMPORTANTE](): This is the 6th and final milestone regarding the development of [my project]((https://github.com/khawla-k-banydomi/schedulerapiCE)) : [composition of services](https://jj-github-io.translate.goog/CC/documentos/proyecto/6.Compose.html?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ar).
 
 # Main Repository For The Subject
 - To see How I configure my Github account Please Go [Here](https://github.com/khawla-k-banydomi/schedulerapiCE/blob/main/doc/Configuration.md). 🔧
 - To see the First Milestone (hito-0) and To Take a tour around the Application That I want to develop please Go [Here](https://github.com/khawla-k-banydomi/schedulerapiCE/blob/main/doc/Description.md). 🗓️
 - To see full descriptive document for the architecture and tools that I already and will use during the development check this [Document](https://github.com/khawla-k-banydomi/schedulerapiCE/blob/main/doc/Architecture.md) 📔
 - To see the Second Milestone (hito-1) and To take a tour around milestones and issues regarding the application please Go [Here](https://github.com/khawla-k-banydomi/schedulerapiCE/blob/main/doc/MS1_Specifying%20and%20planning%20the%20project.md). 🗒️
-- To see the complete description of the user stories please Go [Here](https://github.com/khawla-k-banydomi/schedulerapiCE/blob/main/doc/User-Stories.md). 📓
-- There are several unwanted [issues](https://github.com/khawla-k-banydomi/schedulerapiCE/issues?q=is%3Aissue+is%3Aclosed) regarding testing milestone.
+- To see the Third Milestone (hito-2) please Go [Here](https://github.com/khawla-k-banydomi/schedulerapiCE/blob/main/doc/MS2_Testing.md). 📓
+- To see the Fourth Milestone (hito-3) please Go [Here](https://github.com/khawla-k-banydomi/schedulerapiCE/blob/main/doc/MS3_Docker-documentation.md). 📓
+- To see the Fifth Milestone (hito-4) please Go [Here](https://github.com/khawla-k-banydomi/schedulerapiCE/blob/main/doc/MS4_CI.md). 📓
+- To see the Sixth Milestone (hito-5) please Go [Here](https://github.com/khawla-k-banydomi/schedulerapiCE/blob/main/doc/MS5_Design%20and%20test%20of%20a%20microservice.md). 📓
+
+- There are several  [issues](https://github.com/khawla-k-banydomi/schedulerapiCE/issues) regarding testing milestone.
 ---
 
-### This is the Document for the Second-milestone which is the [test](https://jj.github.io/CC/documentos/proyecto/2021/2.Tests) milestone.
-- To sum up I have to add the following features:<br>
-- Testing-Framework and Assertion-Library, and configure the [cc.yaml](https://github.com/khawla-k-banydomi/schedulerapiCE/blob/main/cc.yaml) file correctly.
-- In this case I’ll be using Mocha which allows asynchronous testing using any assertion library, Chai as well is a Javascript Assertion Library; It performs functions and methods to test the code.
-> How to run the test:<br>
->  gulp test 
 
-# TaskManager
-- For task management, I've gone back and forth between npm, grunt, and gulp. All three tools are well-known in the Javascript community, and any of them could be useful for the purposes of this project.We are already using npm as a dependency manager in our project. Since we already use it for that, I'd like to have a separate task management tool (which leaves us between grunt and gulp).Grunt and Gulp are two tools that do the same thing: they automate tasks. Although the performance benchmarks that I've been observing place gulp above, it is not a factor that we will consider.Where we see a significant difference is in the notation of these tools: whereas grunt is more focused on configuration files (JSON type), gulp is focused on code (Javascript), which in my opinion makes it easier to use.
-comprehend and apply.
+For the composition of the cluster, it has been determined that at least 2 containers are needed:
 
-- I ultimately chose Gulp because of what I previously mentioned; However there are several alternatives such as Grunt.
-There are several differences between Grunt and Gulp. To see more information about this you can visit this [source](https://www.keycdn.com/blog/gulp-vs-grunt).
-You can look at [gulp.js](https://github.com/khawla-k-banydomi/schedulerapiCE/blob/main/gulpfile.js), There are several tasks inside this file.
-*One is to ensure that Gulp is working properly (Gulp Tasks are working) which can be considered as a test task.
-*The other one for the server which is (start and restart the server).
-
-# Assertion Library:
-- There are numerous assertion libraries for Javascript, and the language itself has an assertion library (assert).
-There are two approaches: [BDD](https://www.agilealliance.org/glossary/bdd/) and [TDD](https://www.agilealliance.org/glossary/tdd/). and there are several differences between the two mentioned approaches [inside this link](https://www.pluralsight.com/blog/software-development/tdd-vs-bdd).
-Because we are using domain-driven design in conjunction with user stories, and the client is guiding the project's development, I believe the BDD approach is more appropriate.
-- BDD-like assertion libraries are intended to be close to natural language. In this way, they are easier to understand and adapt to the user's needs. The library that I have finally chosen is [Chai.js](https://www.chaijs.com/) , which has expressions of the type expect (). To.be.a () or expect (). To.equal () . we can see the different styles of Chai's assertions [inside this blog](https://www.chaijs.com/guide/styles/).
+    Node.js server and Mongo database
 
 
-# Testing-Framework:
+- In this milestone the most important file is [docker-compose.yml](https://github.com/khawla-k-banydomi/schedulerapiCE/blob/main/docker-compose.yml) which has been created and contains the following:
 
 
-- Since we've chosen BDD(Behavior Driven Development), some benchmarks that align with this philosophy are Mocha, Cucumber, and Jest.
-Any of them can be used in conjunction with Chai, but the Chai + Mocha combination appears to be quite popular in the community ([inside this link](https://www.chaijs.com/guide/installation/),it is obvious that Chai recommends Mocha, but keep in mind that it is compatible with anyone), so we chose that combination. 
 
-<br>
-
----
-## Importante
-
-### Sometimes it is a must to clean the (npm) cache on you computer before running the test to avoid any sudden error, you can force clear the cache by running: [npm cache clear --force](https://coder-coder.com/npm-clear-cache/#:~:text=Run%3A%20%E2%80%9Cnpm%20cache%20clean%20%E2%80%93force%E2%80%9D&text=are%20both%20not%20working%20and,npm%20cache%20on%20your%20computer.), this will force delete the npm cache on your computer.
-
-## To run the test we can write down the following command:
-
-### [gulp test](https://tobythetesterblog.wordpress.com/2016/01/03/using-gulp-for-testing/comment-page-1/)
-
-- There are several tasks in the [test folder](https://github.com/khawla-k-banydomi/schedulerapiCE/blob/main/test) that could be tested which are the following:
-
-# [Event Entity](https://github.com/khawla-k-banydomi/schedulerapiCE/blob/main/test/api_event.js)
-
-[Events Service Tests]()
-
-    [List Events]()
-      ✓ return all events
-    Single Event
-      ✓ return an event by id
-      ✓ throw an not found error if id does not match
-
-
-    [Create an Event]()
-    
-      ✓ create an event
-      ✓ not authenticated user can not create a new event
-      ✓ start time must be before end time
-      ✓ start time must be in the future
-      ✓ reminder time must be prior start time
-      
-    [Update an Event]()
-    
-      ✓ update an event
-      ✓ throw error if event does not exist
-      ✓ start time must be before end time
-      ✓ start time must be in the future
-      ✓ reminder time must be prior start time
-      
-    [Delete an Event]()
-    
-      ✓ delete an event
-      ✓ throw error if event does not exist
-    Restore an Event
-      ✓ restore an event
-      ✓ throw error if event does not exist
-
-  [Events Controller Tests]()
+       version: '3.4'
+       services:
+        schedulerrestfulapi:
+        image: schedulerrestfulapi
+        build:
+        context: .
+        dockerfile: ./Dockerfile
+        environment:
+        NODE_ENV: production
+        ports:
+      - 8080:8080
+        volumes:
+      - .:/usr/src/app
+        links:
+      - mongodb
+        mongodb:
+        image: mongo:latest
+        ports: 
+        - 32110:32110
+        volumes:
+        - data:/data/db
+        volumes:
+        data: 
   
-    ✓ return a list of events
-    ✓ return a single event by exact id
-    ✓ create a new event
-    ✓ update an event
-    ✓ delete an event
-    ✓ reset an event
+As you can see, 2 services are included, which are the 2 containers that we are going to create. 
+For the first, the container has been chosen mongodbas a NoSQL DB, since we needed a DB of this type because of how the project was configured from the beginning, and mongoit is one of the databases NoSQL more famous and with more documentation.
+What has made me opt for its use has been above all the ease of importing data, 
+since through a client it has allowed me to select the file  .json and quickly load all events, making it easy to use from the start.
 
-  # [Holiday Entity](https://github.com/khawla-k-banydomi/schedulerapiCE/blob/main/test/api_holiday.js)
+The image we downloaded is the most recent of mongodb,and in the section portsports are specified from where the service provided by the
+container will be accessed.
+You need to specify 2 since the first one of them is the one you use mongodbin the container, and another is the one that is mapped to access from outside of the container (the one to be used). The default port is 27017 but we can choose a different one and in this case I choose 32110.
 
-  [Holidays Service Tests]()
-  
-    List Holidays
-      ✓ return all holidays
-    Single Holiday
-      ✓ return an holiday by id
-      ✓ throw an not found error if id does not match
-    Create an Holiday
-      ✓ create an holiday
-      ✓ not authenticated user can not create a new holiday
-    Update an Holiday
-      ✓ update an holiday
-      ✓ throw error if holiday does not exist
-    Delete an Holiday
-      ✓ delete an holiday
-      ✓ throw error if holiday does not exist
+In order to be able to store the data and not be erased at each disconnection from the cluster, we mount a volume in /data/db that is specified 
+in the creation of the container and also in the lower section volumeswhich indicates the volumes to use.
 
-  [Holidays Controller Tests]()
-  
-    ✓ return a list of holidays
-    ✓ return a single holiday by exact id
-    ✓ create a new fixed-day holiday
-    ✓ create a new ranged-days holiday
-    ✓ update an holiday
-    ✓ delete an holiday
+The other service created is the application developed in the subject: a task has been created in the task manager to be able to raise the server
+and make it listen. The Dockerfile with which it has been built is very similar to that of milestone 3 except that the command to execute has been changed for the latter.
 
- # [User Entity](https://github.com/khawla-k-banydomi/schedulerapiCE/blob/main/test/api_user.js)
-  
-  [Users Service Tests]()
-  
-    ✓ return single user
-    ✓ create a new user
+Once with all this, you can build the containers with [docker-compose up](https://docs.docker.com/engine/reference/commandline/compose_up/) and when we do it we see that are built successfully
 
-  [Users Controller Tests]()
-  
-    ✓ return the user profile
-    ✓ register a new user
+# 🗒️ To sum-up:
+I can provide the answers to the following Questions:
+----------------------------
+- ❔ What is the cluster structure?
+- 📓 The cluster structure consists of two containers which are the Node.js server and Mongo database.
 
 
-- The following screen-shot shows the whole result after run :[gulp test]()
+- ❓What is the configuration for each container?
+- 📔 Node.js container is built on top of a Dockerfile I created which:
 
-<img src="https://github.com/khawla-k-banydomi/schedulerapiCE/blob/main/doc/unit%20test%201.png" width="1000" height="700">
+- defines the underlying Node.js image I use which is the 'node:12.2.0-alpine'
+- install the server dependencies
+- exposing the port:3000 for the external connection
+- running the server
 
-<img src="https://github.com/khawla-k-banydomi/schedulerapiCE/blob/main/doc/unit%20test%202.png" width="1000" height="700">
+- 📔 MongoDB container is:
+- built on top of the 'mongo' latest image
+- defining the used volume to avoid losing data after restarting the container
 
-<img src="https://github.com/khawla-k-banydomi/schedulerapiCE/blob/main/doc/unit%20test%203.png" width="1000" height="700">
-
----
-
-# [Test-milestone:Completed](https://github.com/khawla-k-banydomi/schedulerapiCE/milestone/5)
-
+- ❔ What is the composition file?
+- 📓 The composition file is the docker-compose.yml file
 
 
+- ❓ What are the main tests?
+- 📔 Testing the CRUD operations for events and holidays
 
+
+- Before hitting the command : docker-compose up it is important to write down the following command:
+### sudo npm dudupe
+
+- The following demonestrate what happen exactly:
+
+### Docker-6-dedupe : To install NPM in a right way ; this command searches the local package tree and attempts to simplify the overall structure by moving dependencies further up the tree.
+
+<img src="https://github.com/khawla-k-banydomi/schedulerapiCE/blob/main/doc/Docker-6-dedupe.png" width="1000" height="700">
+
+### Docker-6-DB: Here the App connected successfuly to the DB.
+
+<img src="https://github.com/khawla-k-banydomi/schedulerapiCE/blob/main/doc/Docker-6-DB.png" width="1000" height="700">
+
+### Docker-6-Tests: Here some tests are passed based on the code.
+
+
+<img src="https://github.com/khawla-k-banydomi/schedulerapiCE/blob/main/doc/Docker-6-Tests.png" width="1000" height="700">
+
+
+### Docker-6-Passing: The total number of passing tests.
+
+<img src="https://github.com/khawla-k-banydomi/schedulerapiCE/blob/main/doc/Docker-6-Passing.png" width="1000" height="700">
+
+
+
+### Docker-6-Add-Extra-Tests: Add extra tests.
+
+<img src="https://github.com/khawla-k-banydomi/schedulerapiCE/blob/main/doc/Docker-6-Tests1.png" width="1000" height="700">
+
+
+### Docker-6-Total-with-addition-tests: The total number of passing tests.
+
+<img src="https://github.com/khawla-k-banydomi/schedulerapiCE/blob/main/doc/Docker-6-Totalerr.png" width="1000" height="700">
+
+
+
+## The completion of the project:
+This is the last miletsone in which the server as well the data-base are running and manipulate the tests using : Docker-compose up command.
+
+## [The completion of the milestone](https://github.com/khawla-k-banydomi/schedulerapiCE/milestone/9)
 
