@@ -119,6 +119,17 @@ I can provide the answers to the following Questions:
 
 
 
+### Docker-6-Add-Extra-Tests: Add extra tests.
+
+<img src="https://github.com/khawla-k-banydomi/schedulerapiCE/blob/main/doc/Docker-6-Tests1.png" width="1000" height="700">
+
+
+### Docker-6-Total-with-addition-tests: The total number of passing tests.
+
+<img src="https://github.com/khawla-k-banydomi/schedulerapiCE/blob/main/doc/Docker-6-Totalerr.png" width="1000" height="700">
+
+
+
 ## The completion of the project:
 This is the last miletsone in which the server as well the data-base are running and manipulate the tests using : Docker-compose up command.
 
