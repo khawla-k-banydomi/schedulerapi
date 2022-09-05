@@ -1,3 +1,5 @@
+[![Docker Image CI](https://github.com/khawla-k-banydomi/schedulerapiCE/actions/workflows/docker-image.yml/badge.svg)](https://github.com/khawla-k-banydomi/schedulerapiCE/actions/workflows/docker-image.yml)
+
 # 🐋 Milestone 6 : Docker Compose 🐋
 
 
