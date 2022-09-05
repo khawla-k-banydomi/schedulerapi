@@ -16,11 +16,29 @@ jobs:
     # A list of available CircleCI Docker Convenience Images are available here: https://circleci.com/developer/images/image/cimg/node
     docker:
       - image: cimg/node:16.10
+      - image: mongo:4.4.14
     # Then run your tests!
     # CircleCI will report the results back to your VCS provider.
     steps:
       # Checkout the code as the first step.
       - checkout
+      - run:
+          name: Install MongoDB.
+          command: |
+            sudo apt-get update
+            sudo apt-get install -y mongodb
+      - run:
+          name: 'Wait for Mongo'
+          command: |
+            dockerize -wait tcp://127.0.0.1:27017 -timeout 1m
+            sleep 10
+      - run:
+          name: Get versions
+          command: |
+            node -v
+            npm -v
+            mongo --version
+            mongo localhost --eval "db.version()"
       # Next, the node orb's install-packages step will install the dependencies from a package.json.
       # The orb install-packages step will also automatically cache them for faster future runs.
       - node/install-packages:
@@ -28,6 +46,8 @@ jobs:
           pkg-manager: npm
       - run:
           name: Run tests
+          environment:
+            MONGOURI: mongodb://localhost:27017/scheduler
           command: npm test
 
 workflows:
