@@ -11,13 +11,12 @@ script:
   run_test: npm run test
 
 test:
-  - test/api_event.js
-  - test/api_holiday.js
-  - test/api_user.js
+  - test/eventsTest.js
 
 entidad:
  - src/models/Event.js
- - src/models/Holiday.js
+ - src/models/Schedule.js
+ - src/models/Timeline.js
  - src/models/User.js
  
 make: gulp
