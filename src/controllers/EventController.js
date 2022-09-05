@@ -1,4 +1,5 @@
 const EventService = require('../services/EventService');
+const mongoIdRegex = /^(?=[a-f\d]{24}$)(\d+[a-f]|[a-f]+\d)/i;
 
 class EventController {
   eventService = new EventService();
@@ -7,10 +8,15 @@ class EventController {
   getUserEvents = async (req, res) => {
     try {
       const user = req.params.user;
+
+      if (!user || user === 'null') return res.sendStatus(401);
+
       const events = await this.eventService.getAll(user);
+      if (!isNaN(events)) return res.sendStatus(events);
+
       return res.send({ data: events, message: 'Fetched successfully' });
     } catch (e) {
-      return res.send({ message: e.message, status: e.status });
+      return res.sendStatus(500);
     }
   };
 
@@ -19,10 +25,16 @@ class EventController {
     try {
       const id = req.params.id,
         user = req.params.user;
+
+      if (!mongoIdRegex.test(id)) return res.sendStatus(400);
+      if (!user || user === 'null') return res.sendStatus(401);
+
       const event = await this.eventService.getOne(id, user);
+      if (!isNaN(event)) return res.sendStatus(event);
+
       return res.send({ data: event, message: 'Fetched successfully' });
     } catch (e) {
-      return res.send({ message: e.message, status: e.status });
+      return res.sendStatus(500);
     }
   };
 
@@ -31,10 +43,15 @@ class EventController {
     try {
       const user = req.params.user,
         eventObj = req.body;
+
+      if (!user || user === 'null') return res.sendStatus(401);
+
       const event = await this.eventService.createOne(user, eventObj);
+      if (!isNaN(event)) return res.sendStatus(event);
+
       res.send({ data: event, message: 'Created successfully' });
     } catch (e) {
-      return res.send({ message: e.message, status: e.status });
+      return res.sendStatus(500);
     }
   };
 
@@ -43,11 +60,17 @@ class EventController {
     try {
       const id = req.params.id,
         user = req.params.user;
+
+      if (!mongoIdRegex.test(id)) return res.sendStatus(400);
+      if (!user || user === 'null') return res.sendStatus(401);
+
       const updatedObj = req.body;
       const event = await this.eventService.updateOne(id, user, updatedObj);
+      if (!isNaN(event)) return res.sendStatus(event);
+
       res.send({ data: event, message: 'Updated successfully' });
     } catch (e) {
-      return res.send({ message: e.message, status: e.status });
+      return res.sendStatus(500);
     }
   };
 
@@ -56,11 +79,17 @@ class EventController {
     try {
       const id = req.params.id,
         user = req.params.user;
+
+      if (!mongoIdRegex.test(id)) return res.sendStatus(400);
+      if (!user || user === 'null') return res.sendStatus(401);
+
       const updatedObj = req.body;
       const event = await this.eventService.restoreOne(id, user, updatedObj);
+      if (!isNaN(event)) return res.sendStatus(event);
+
       res.send({ data: event, message: 'Restored successfully' });
     } catch (e) {
-      return res.send({ message: e.message, status: e.status });
+      return res.sendStatus(500);
     }
   };
 
@@ -69,10 +98,16 @@ class EventController {
     try {
       const id = req.params.id,
         user = req.params.user;
+
+      if (!mongoIdRegex.test(id)) return res.sendStatus(400);
+      if (!user || user === 'null') return res.sendStatus(401);
+
       const event = await this.eventService.deleteOne(id, user);
+      if (!isNaN(event)) return res.sendStatus(event);
+
       res.send({ data: event, message: 'Deleted successfully' });
     } catch (e) {
-      return res.send({ message: e.message, status: e.status });
+      return res.sendStatus(500);
     }
   };
 }
