@@ -8,6 +8,7 @@ services:
       dockerfile: ./Dockerfile
     environment:
       NODE_ENV: production
+      MONGOURI: mongodb://mongodb:27017/scheduler
     ports:
       - 8080:8080
     volumes:
@@ -16,9 +17,9 @@ services:
       - mongodb
   mongodb:
     image: mongo:latest
-    ports: 
-      - 32110:32110
+    ports:
+      - 32110:32100
     volumes:
       - data:/data/db
 volumes:
-  data: 
+  data:
