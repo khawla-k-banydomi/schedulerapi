@@ -1,50 +1,49 @@
-const { NotFound, BadRequest, Unauthorized } = require('http-errors');
 const Event = require('../models/Event');
 
 class EventService {
   getAll = async (user) => {
-    if (!user) throw new Unauthorized('Unauthorized');
+    if (!user) return 401;
     const events = await Event.find({ user });
     return events;
   };
 
   getOne = async (id, user) => {
-    if (!user) throw new Unauthorized('Unauthorized');
-    const event = await Event.findOne({ id, user });
-    if (!event) throw new NotFound('Event does not exist');
+    if (!user) return 401;
+    const event = await Event.findOne({ _id: id, user });
+    if (!event) return 404;
     return event;
   };
 
   createOne = async (user, eventObj) => {
-    if (!user) throw new Unauthorized('Unauthorized');
+    if (!user) return 401;
     if (eventObj.startTime < new Date()) {
-      throw new BadRequest('Start time must be in the future');
+      return 400;
     }
     if (eventObj.startTime > eventObj.endTime) {
-      throw new BadRequest('Start time must be before end time');
+      return 400;
     }
     if (eventObj.reminderTime > eventObj.startTime) {
-      throw new BadRequest('Reminder time must be prior start time');
+      return 400;
     }
     const event = await Event.create({ user, ...eventObj });
     return event;
   };
 
   updateOne = async (id, user, updatedObj) => {
-    if (!user) throw new Unauthorized('Unauthorized');
-    const event = await Event.findOne({ id, user });
-    if (!event) throw new NotFound('Event does not exist');
+    if (!user) return 401;
+    const event = await Event.findOne({ _id: id, user });
+    if (!event) 404;
     if ((updatedObj.startTime || event.startTime) < new Date()) {
-      throw new BadRequest('Start time must be in the future');
+      return 400;
     }
     if ((updatedObj.startTime || event.startTime) > (updatedObj.endTime || event.endTime)) {
-      throw new BadRequest('Start time must be before end time');
+      return 400;
     }
     if (updatedObj.reminderTime > (updatedObj.startTime || event.startTime)) {
-      throw new BadRequest('Reminder time must be prior start time');
+      return 400;
     }
     const newEvent = await Event.findOneAndUpdate(
-      { id, user },
+      { _id: id, user },
       { $set: updatedObj },
       { new: true }
     );
@@ -52,11 +51,11 @@ class EventService {
   };
 
   restoreOne = async (id, user) => {
-    if (!user) throw new Unauthorized('Unauthorized');
-    const event = await Event.findOne({ id, user });
-    if (!event) throw new NotFound('Event does not exist');
+    if (!user) return 401;
+    const event = await Event.findOne({ _id: id, user });
+    if (!event) 404;
     const newEvent = await Event.findOneAndUpdate(
-      { id, user },
+      { _id: id, user },
       { $set: { isDeleted: false } },
       { new: true }
     );
@@ -64,11 +63,11 @@ class EventService {
   };
 
   deleteOne = async (id, user) => {
-    if (!user) throw new Unauthorized('Unauthorized');
-    const event = await Event.findOne({ id, user });
-    if (!event) throw new NotFound('Event does not exist');
+    if (!user) return 401;
+    const event = await Event.findOne({ _id: id, user });
+    if (!event) 404;
     const newEvent = await Event.findOneAndUpdate(
-      { id, user },
+      { _id: id, user },
       { $set: { isDeleted: true } },
       { new: true }
     );
