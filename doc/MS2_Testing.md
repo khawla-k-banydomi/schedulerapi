@@ -1,15 +1,15 @@
 
 # Main Repository For The Subject
-- To see How I configure my Github account Please Go [Here](https://github.com/khawla-k-banydomi/schedulerapiCE/blob/main/doc/Configuration.md). 🔧
-- To see the First Milestone (hito-0) and To Take a tour around the Application That I want to develop please Go [Here](https://github.com/khawla-k-banydomi/schedulerapiCE/blob/main/doc/Description.md). 🗓️
-- To see full descriptive document for the architecture and tools that I already and will use during the development check this [Document](https://github.com/khawla-k-banydomi/schedulerapiCE/blob/main/doc/Architecture.md) 📔
-- To see the Second Milestone (hito-1) and To take a tour around milestones and issues regarding the application please Go [Here](https://github.com/khawla-k-banydomi/schedulerapiCE/blob/main/doc/MS1_Specifying%20and%20planning%20the%20project.md). 🗒️
-- To see the complete description of the user stories please Go [Here](https://github.com/khawla-k-banydomi/schedulerapiCE/blob/main/doc/User-Stories.md). 📓
-- There are several unwanted [issues](https://github.com/khawla-k-banydomi/schedulerapiCE/issues?q=is%3Aissue+is%3Aclosed) regarding testing milestone.
+- To see How I configure my Github account Please Go [Here](https://github.com/khawla-k-banydomi/schedulerapi/blob/main/doc/Configuration.md). 🔧
+- To see the First Milestone (hito-0) and To Take a tour around the Application That I want to develop please Go [Here](https://github.com/khawla-k-banydomi/schedulerapi/blob/main/doc/Description.md). 🗓️
+- To see full descriptive document for the architecture and tools that I already and will use during the development check this [Document](https://github.com/khawla-k-banydomi/schedulerapi/blob/main/doc/Architecture.md) 📔
+- To see the Second Milestone (hito-1) and To take a tour around milestones and issues regarding the application please Go [Here](https://github.com/khawla-k-banydomi/schedulerapi/blob/main/doc/MS1_Specifying%20and%20planning%20the%20project.md). 🗒️
+- To see the complete description of the user stories please Go [Here](https://github.com/khawla-k-banydomi/schedulerapi/blob/main/doc/User-Stories.md). 📓
+- There are several unwanted [issues](https://github.com/khawla-k-banydomi/schedulerapi/issues?q=is%3Aissue+is%3Aclosed) regarding testing milestone.
 ---
 ### This is the Document for the Second-milestone which is the [test](https://jj.github.io/CC/documentos/proyecto/2021/2.Tests) milestone.
 - To sum up I have to add the following features:<br>
-- Testing-Framework and Assertion-Library, and configure the [cc.yaml](https://github.com/khawla-k-banydomi/schedulerapiCE/blob/main/cc.yaml) file correctly.
+- Testing-Framework and Assertion-Library, and configure the [cc.yaml](https://github.com/khawla-k-banydomi/schedulerapi/blob/main/cc.yaml) file correctly.
 - In this case I’ll be using Mocha which allows asynchronous testing using any assertion library, Chai as well is a Javascript Assertion Library; It performs functions and methods to test the code.
 > How to run the test:<br>
 >  gulp test 
@@ -20,7 +20,7 @@ comprehend and apply.
 
 - I ultimately chose Gulp because of what I previously mentioned; However there are several alternatives such as Grunt.
 There are several differences between Grunt and Gulp. To see more information about this you can visit this [source](https://www.keycdn.com/blog/gulp-vs-grunt).
-You can look at [gulp.js](https://github.com/khawla-k-banydomi/schedulerapiCE/blob/main/gulpfile.js), There are several tasks inside this file.
+You can look at [gulp.js](https://github.com/khawla-k-banydomi/schedulerapi/blob/main/gulpfile.js), There are several tasks inside this file.
 *One is to ensure that Gulp is working properly (Gulp Tasks are working) which can be considered as a test task.
 *The other one for the server which is (start and restart the server).
 
@@ -42,7 +42,7 @@ Any of them can be used in conjunction with Chai, but the Chai + Mocha combinati
 ---
 ### To run the test we can write down the following command:
 ### gulp test
-- There are several tasks in the [test folder](https://github.com/khawla-k-banydomi/schedulerapiCE/blob/main/test) that could be tested which are the following:
+- There are several tasks in the [test folder](https://github.com/khawla-k-banydomi/schedulerapi/blob/main/test) that could be tested which are the following:
 - Testing GET event 
 - Testing POST event
 - Testing modify(PATCH) event
@@ -50,10 +50,11 @@ Any of them can be used in conjunction with Chai, but the Chai + Mocha combinati
 
 - The following screen-shot shows the whole result after run :gulp test
 
-<img src="https://github.com/khawla-k-banydomi/schedulerapiCE/blob/main/doc/complete-test-MS2.png" width="1000" height="700">
+<img src="https://github.com/khawla-k-banydomi/schedulerapi/blob/main/doc/complete-test-MS2.png" width="1000" height="700">
 
 ---
-# [Test-milestone:Completed](https://github.com/khawla-k-banydomi/schedulerapiCE/milestone/5)
+# [Test-milestone:Completed](https://github.com/khawla-k-banydomi/schedulerapi/milestone/5)
+
 
 
 

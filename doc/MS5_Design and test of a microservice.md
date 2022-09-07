@@ -1,20 +1,20 @@
 
 # Micro-services Justification
 
-- To see How I configure my Github account Please Go [Here](https://github.com/khawla-k-banydomi/schedulerapiCE/blob/main/doc/Configuration.md). 🔧
+- To see How I configure my Github account Please Go [Here](https://github.com/khawla-k-banydomi/schedulerapi/blob/main/doc/Configuration.md). 🔧
 
-- To see full descriptive document for the architecture and tools that I already and will use during the development check this [Document](https://github.com/khawla-k-banydomi/schedulerapiCE/blob/main/doc/Architecture.md) 📔
-- To see the First Milestone (hito-0) and To Take a tour around the Application That I want to develop please Go [Here](https://github.com/khawla-k-banydomi/schedulerapiCE/blob/main/doc/MS0_Description.md). 🗓️
+- To see full descriptive document for the architecture and tools that I already and will use during the development check this [Document](https://github.com/khawla-k-banydomi/schedulerapi/blob/main/doc/Architecture.md) 📔
+- To see the First Milestone (hito-0) and To Take a tour around the Application That I want to develop please Go [Here](https://github.com/khawla-k-banydomi/schedulerapi/blob/main/doc/MS0_Description.md). 🗓️
 
-- To see the Second Milestone (hito-1) and To take a tour around milestones and issues regarding the application please Go [Here](https://github.com/khawla-k-banydomi/schedulerapiCE/blob/main/doc/MS1_Specifying%20and%20planning%20the%20project.md). 🗒️
+- To see the Second Milestone (hito-1) and To take a tour around milestones and issues regarding the application please Go [Here](https://github.com/khawla-k-banydomi/schedulerapi/blob/main/doc/MS1_Specifying%20and%20planning%20the%20project.md). 🗒️
 
-- To see the Third Milestone (hito-2) and To take a tour around testing in the context of our application please Go [Here](https://github.com/khawla-k-banydomi/schedulerapiCE/blob/main/doc/MS2_Testing.md). 🗒️
+- To see the Third Milestone (hito-2) and To take a tour around testing in the context of our application please Go [Here](https://github.com/khawla-k-banydomi/schedulerapi/blob/main/doc/MS2_Testing.md). 🗒️
 
-- To see the Fourth Milestone (hito-3) and To take a tour around Docker in the context of our application please Go [Here](https://github.com/khawla-k-banydomi/schedulerapiCE/blob/main/doc/MS3_Docker-documentation.md). 🗒️
+- To see the Fourth Milestone (hito-3) and To take a tour around Docker in the context of our application please Go [Here](https://github.com/khawla-k-banydomi/schedulerapi/blob/main/doc/MS3_Docker-documentation.md). 🗒️
 
-- To see the Fifth Milestone (hito-4) and To take a tour around CI in the context of our application please Go [Here](https://github.com/khawla-k-banydomi/schedulerapiCE/blob/main/doc/MS4_CI.md)
+- To see the Fifth Milestone (hito-4) and To take a tour around CI in the context of our application please Go [Here](https://github.com/khawla-k-banydomi/schedulerapi/blob/main/doc/MS4_CI.md)
 - 
-- To see the complete description of the user stories please Go [Here](https://github.com/khawla-k-banydomi/schedulerapiCE/blob/main/doc/User-Stories.md). 📓
+- To see the complete description of the user stories please Go [Here](https://github.com/khawla-k-banydomi/schedulerapi/blob/main/doc/User-Stories.md). 📓
 
 > This milestone is responsible for what so called as a micro-services which can be defined as the small and a single service which comes from distributed computing architecture which in turns, connects many small services,it can be delivered via an (API) application programming interface..[Read more Here](https://www.bmc.com/blogs/microservice-vs-api/#:~:text=A%20microservice%20is%20a%20small,application%20programming%20interface%20(API)).
 
@@ -92,13 +92,13 @@ Below I indicate which routes (method used, the route in parentheses and / or pa
 # Structuring the tests for API
 
 - We have three differentiated routes:
-# - [api_event.js](https://github.com/khawla-k-banydomi/schedulerapiCE/blob/main/test/api_event.js):
+# - [api_event.js](https://github.com/khawla-k-banydomi/schedulerapi/blob/main/test/api_event.js):
 which should test the GET,POST, return 200 if ok,return 404 if not
 
-# - [api_holiday.js](https://github.com/khawla-k-banydomi/schedulerapiCE/blob/main/test/api_holiday.js):
+# - [api_holiday.js](https://github.com/khawla-k-banydomi/schedulerapi/blob/main/test/api_holiday.js):
 which should test GET for the index, return 200 if ok, return 404 if not.
 
-# - [api_user.js](https://github.com/khawla-k-banydomi/schedulerapiCE/blob/main/test/api_user.js):
+# - [api_user.js](https://github.com/khawla-k-banydomi/schedulerapi/blob/main/test/api_user.js):
 which should test GET for the user, return 200 if ok, return 404 if not.
 
 
@@ -156,6 +156,8 @@ now I decided to set two types of exceptions:
 - [Tutorial provided by Prof.Claudia](https://restfulapi.net/rest-api-design-tutorial-with-example/)
 - [Tutorial related to the subject-'Temas'](http://jj.github.io/CC/documentos/temas/Microservicios.html)
 - [Good practices must be followed when building an API](https://stackoverflow.blog/2020/03/02/best-practices-for-rest-api-design/)
+
+
 
 
 

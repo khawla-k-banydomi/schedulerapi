@@ -2,11 +2,11 @@
 # ✨Activity Scheduler✨
  
 
-+ [![N|Solid](https://img.shields.io/github/issues/khawla-k-banydomi/ActivityScheduler)](https://img.shields.io/github/issues/khawla-k-banydomi/ActivityScheduler)
++ [![N|Solid](https://img.shields.io/github/issues/khawla-k-banydomi/schedulerapi)](https://img.shields.io/github/issues/khawla-k-banydomi/schedulerapi)
 [![Linux](https://svgshare.com/i/Zhy.svg)](https://svgshare.com/i/Zhy.svg)
-[![N|Solid](https://img.shields.io/github/stars/khawla-k-banydomi/ActivityScheduler)]()
-[![N|Solid](https://img.shields.io/github/license/khawla-k-banydomi/ActivityScheduler)]()
-[![N|Solid](https://img.shields.io/twitter/url?url=https%3A%2F%2Fgithub.com%2Fkhawla-k-banydomi%2FActivityScheduler%2Fblob%2Fmain%2FREADME.md)]()
+[![N|Solid](https://img.shields.io/github/stars/khawla-k-banydomi/schedulerapi)]()
+[![N|Solid](https://img.shields.io/github/license/khawla-k-banydomi/schedulerapi)]()
+[![N|Solid](https://img.shields.io/twitter/url?url=https%3A%2F%2Fgithub.com%2Fkhawla-k-banydomi%2Fschedulerapi%2Fblob%2Fmain%2FREADME.md)]()
   
 
 > - There are several user problems that computer science deals with and indeed solves them in an efficient way using a computer and computing equipment.
@@ -18,7 +18,7 @@ During the day, week and the year, people plan a range of events and activities,
 
 # Solution
 
-ActivityScheduler is a cloud-based application that consists of a personal agenda in which work events/activities (tasks to do, appointments, events, meetings, reminders, etc...) can be included; it will also be possible to manage non-working days (weekends,festivals or holidays), so that business events cannot be included during these days.
+schedulerapi is a cloud-based application that consists of a personal agenda in which work events/activities (tasks to do, appointments, events, meetings, reminders, etc...) can be included; it will also be possible to manage non-working days (weekends,festivals or holidays), so that business events cannot be included during these days.
 
 
 Once the application is launched, the entities that comprise the system will be revealed, which are as follows:
@@ -63,7 +63,7 @@ As a result, the following are the functionalities of this entity:
 # Create Logo
 From this [website](https://hatchful.shopify.com/) I create my personal Logo: 
 
-<img src="https://github.com/khawla-k-banydomi/ActivityScheduler/blob/main/doc/logo.png" width="500" height="200">
+<img src="https://github.com/khawla-k-banydomi/schedulerapi/blob/main/doc/logo.png" width="500" height="200">
 
 # Git and GitHub Setup
 ![](https://myoctocat.com/assets/images/base-octocat.svg)
@@ -71,12 +71,13 @@ From this [website](https://hatchful.shopify.com/) I create my personal Logo:
 
 
 
-+ 🕸️[Full Configuration for Git & GitHub](https://github.com/khawla-k-banydomi/ActivityScheduler/blob/main/doc/Configuration.md)
++ 🕸️[Full Configuration for Git & GitHub](https://github.com/khawla-k-banydomi/schedulerapi/blob/main/doc/Configuration.md)
 
-+ ⏳ By describing the  problem in the readme file, adding .gitignore file,adding license and setting up git and Github, [Milestone-0](https://github.com/khawla-k-banydomi/ActivityScheduler/milestones) is completed
++ ⏳ By describing the  problem in the readme file, adding .gitignore file,adding license and setting up git and Github, [Milestone-0](https://github.com/khawla-k-banydomi/schedulerapi/milestones) is completed
 
 ### Further Resources
 + 🕸️[Architecture & business Logic](https://avitsadok.medium.com/design-a-great-architecture-for-your-app-614bfdc22e0a)
+
 
 
 

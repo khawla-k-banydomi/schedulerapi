@@ -1,17 +1,17 @@
 
 # Docker Justification
 
-- To see How I configure my Github account Please Go [Here](https://github.com/khawla-k-banydomi/schedulerapiCE/blob/main/doc/Configuration.md). 🔧
-- To see full descriptive document for the architecture and tools that I already and will use during the development check this [Document](https://github.com/khawla-k-banydomi/schedulerapiCE/blob/main/doc/Architecture.md) 📔
-- To see the First Milestone (hito-0) and To Take a tour around the Application That I want to develop please Go [Here](https://github.com/khawla-k-banydomi/schedulerapiCE/blob/main/doc/MS0_Description.md). 🗓️
+- To see How I configure my Github account Please Go [Here](https://github.com/khawla-k-banydomi/schedulerapi/blob/main/doc/Configuration.md). 🔧
+- To see full descriptive document for the architecture and tools that I already and will use during the development check this [Document](https://github.com/khawla-k-banydomi/schedulerapi/blob/main/doc/Architecture.md) 📔
+- To see the First Milestone (hito-0) and To Take a tour around the Application That I want to develop please Go [Here](https://github.com/khawla-k-banydomi/schedulerapi/blob/main/doc/MS0_Description.md). 🗓️
 
-- To see the Second Milestone (hito-1) and To take a tour around milestones and issues regarding the application please Go [Here](https://github.com/khawla-k-banydomi/schedulerapiCE/blob/main/doc/MS1_Specifying%20and%20planning%20the%20project.md). 🗒️
-- To see the Third Milestone (hito-2) and To take a tour around testing in the context of our application please Go [Here](https://github.com/khawla-k-banydomi/schedulerapiCE/blob/main/doc/MS2_Testing.md). 🗒️
-- To see the complete description of the user stories please Go [Here](https://github.com/khawla-k-banydomi/schedulerapiCE/blob/main/doc/User-Stories.md). 📓
+- To see the Second Milestone (hito-1) and To take a tour around milestones and issues regarding the application please Go [Here](https://github.com/khawla-k-banydomi/schedulerapi/blob/main/doc/MS1_Specifying%20and%20planning%20the%20project.md). 🗒️
+- To see the Third Milestone (hito-2) and To take a tour around testing in the context of our application please Go [Here](https://github.com/khawla-k-banydomi/schedulerapi/blob/main/doc/MS2_Testing.md). 🗒️
+- To see the complete description of the user stories please Go [Here](https://github.com/khawla-k-banydomi/schedulerapi/blob/main/doc/User-Stories.md). 📓
 - There are several unwanted issues that will be closed and tagged as removed.
 ---
 
-## [Why Docker?](https://github.com/khawla-k-banydomi/schedulerapiCE/blob/main/doc/Docker.md)
+## [Why Docker?](https://github.com/khawla-k-banydomi/schedulerapi/blob/main/doc/Docker.md)
 
 ### This is the Document for the Third-milestone which is the [Docker](https://jj.github.io/CC/documentos/proyecto/2021/3.Docker) milestone.
 - To sum up I have to add the following features:<br>
@@ -113,7 +113,7 @@ Finally I decide to stay with Node-Alpine for the following reasons:
 
 # FOR THE COMPARISON PURPOSE WE USE THE FOLLOWING SCREENSHOT:
 
-<img src="https://github.com/khawla-k-banydomi/schedulerapiCE/blob/main/doc/Docker-images.png" width="1000" height="700">
+<img src="https://github.com/khawla-k-banydomi/schedulerapi/blob/main/doc/Docker-images.png" width="1000" height="700">
 
 
 
@@ -129,7 +129,8 @@ Finally I decide to stay with Node-Alpine for the following reasons:
 - It is good to see further information inside [This link](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/) .
 
 ---
-# [Docker-Justification-milestone:Completed](https://github.com/khawla-k-banydomi/schedulerapiCE/milestone/5)
+# [Docker-Justification-milestone:Completed](https://github.com/khawla-k-banydomi/schedulerapi/milestone/5)
+
 
 
 

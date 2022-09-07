@@ -1,19 +1,19 @@
 # 🐋 Milestone 6 : Docker Compose 🐋
 
 
-- [IMPORTANTE](): This is the 6th and final milestone regarding the development of [my project]((https://github.com/khawla-k-banydomi/schedulerapiCE)) : [composition of services](https://jj-github-io.translate.goog/CC/documentos/proyecto/6.Compose.html?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ar).
+- [IMPORTANTE](): This is the 6th and final milestone regarding the development of [my project]((https://github.com/khawla-k-banydomi/schedulerapi)) : [composition of services](https://jj-github-io.translate.goog/CC/documentos/proyecto/6.Compose.html?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=ar).
 
 # Main Repository For The Subject
-- To see How I configure my Github account Please Go [Here](https://github.com/khawla-k-banydomi/schedulerapiCE/blob/main/doc/Configuration.md). 🔧
-- To see the First Milestone (hito-0) and To Take a tour around the Application That I want to develop please Go [Here](https://github.com/khawla-k-banydomi/schedulerapiCE/blob/main/doc/Description.md). 🗓️
-- To see full descriptive document for the architecture and tools that I already and will use during the development check this [Document](https://github.com/khawla-k-banydomi/schedulerapiCE/blob/main/doc/Architecture.md) 📔
-- To see the Second Milestone (hito-1) and To take a tour around milestones and issues regarding the application please Go [Here](https://github.com/khawla-k-banydomi/schedulerapiCE/blob/main/doc/MS1_Specifying%20and%20planning%20the%20project.md). 🗒️
-- To see the Third Milestone (hito-2) please Go [Here](https://github.com/khawla-k-banydomi/schedulerapiCE/blob/main/doc/MS2_Testing.md). 📓
-- To see the Fourth Milestone (hito-3) please Go [Here](https://github.com/khawla-k-banydomi/schedulerapiCE/blob/main/doc/MS3_Docker-documentation.md). 📓
-- To see the Fifth Milestone (hito-4) please Go [Here](https://github.com/khawla-k-banydomi/schedulerapiCE/blob/main/doc/MS4_CI.md). 📓
-- To see the Sixth Milestone (hito-5) please Go [Here](https://github.com/khawla-k-banydomi/schedulerapiCE/blob/main/doc/MS5_Design%20and%20test%20of%20a%20microservice.md). 📓
+- To see How I configure my Github account Please Go [Here](https://github.com/khawla-k-banydomi/schedulerapi/blob/main/doc/Configuration.md). 🔧
+- To see the First Milestone (hito-0) and To Take a tour around the Application That I want to develop please Go [Here](https://github.com/khawla-k-banydomi/schedulerapi/blob/main/doc/Description.md). 🗓️
+- To see full descriptive document for the architecture and tools that I already and will use during the development check this [Document](https://github.com/khawla-k-banydomi/schedulerapi/blob/main/doc/Architecture.md) 📔
+- To see the Second Milestone (hito-1) and To take a tour around milestones and issues regarding the application please Go [Here](https://github.com/khawla-k-banydomi/schedulerapi/blob/main/doc/MS1_Specifying%20and%20planning%20the%20project.md). 🗒️
+- To see the Third Milestone (hito-2) please Go [Here](https://github.com/khawla-k-banydomi/schedulerapi/blob/main/doc/MS2_Testing.md). 📓
+- To see the Fourth Milestone (hito-3) please Go [Here](https://github.com/khawla-k-banydomi/schedulerapi/blob/main/doc/MS3_Docker-documentation.md). 📓
+- To see the Fifth Milestone (hito-4) please Go [Here](https://github.com/khawla-k-banydomi/schedulerapi/blob/main/doc/MS4_CI.md). 📓
+- To see the Sixth Milestone (hito-5) please Go [Here](https://github.com/khawla-k-banydomi/schedulerapi/blob/main/doc/MS5_Design%20and%20test%20of%20a%20microservice.md). 📓
 
-- There are several  [issues](https://github.com/khawla-k-banydomi/schedulerapiCE/issues) regarding testing milestone.
+- There are several  [issues](https://github.com/khawla-k-banydomi/schedulerapi/issues) regarding testing milestone.
 ---
 
 
@@ -22,7 +22,7 @@ For the composition of the cluster, it has been determined that at least 2 conta
     Node.js server and Mongo database
 
 
-- In this milestone the most important file is [docker-compose.yml](https://github.com/khawla-k-banydomi/schedulerapiCE/blob/main/docker-compose.yml) which has been created and contains the following:
+- In this milestone the most important file is [docker-compose.yml](https://github.com/khawla-k-banydomi/schedulerapi/blob/main/docker-compose.yml) which has been created and contains the following:
 
 
 
@@ -101,37 +101,40 @@ I can provide the answers to the following Questions:
 
 ### Docker-6-dedupe : To install NPM in a right way ; this command searches the local package tree and attempts to simplify the overall structure by moving dependencies further up the tree.
 
-<img src="https://github.com/khawla-k-banydomi/schedulerapiCE/blob/main/doc/Docker-6-dedupe.png" width="1000" height="700">
+<img src="https://github.com/khawla-k-banydomi/schedulerapi/blob/main/doc/Docker-6-dedupe.png" width="1000" height="700">
 
 ### Docker-6-DB: Here the App connected successfuly to the DB.
 
-<img src="https://github.com/khawla-k-banydomi/schedulerapiCE/blob/main/doc/Docker-6-DB.png" width="1000" height="700">
+<img src="https://github.com/khawla-k-banydomi/schedulerapi/blob/main/doc/Docker-6-DB.png" width="1000" height="700">
 
 ### Docker-6-Tests: Here some tests are passed based on the code.
 
 
-<img src="https://github.com/khawla-k-banydomi/schedulerapiCE/blob/main/doc/Docker-6-Tests.png" width="1000" height="700">
+<img src="https://github.com/khawla-k-banydomi/schedulerapi/blob/main/doc/Docker-6-Tests.png" width="1000" height="700">
 
 
 ### Docker-6-Passing: The total number of passing tests.
 
-<img src="https://github.com/khawla-k-banydomi/schedulerapiCE/blob/main/doc/Docker-6-Passing.png" width="1000" height="700">
+<img src="https://github.com/khawla-k-banydomi/schedulerapi/blob/main/doc/Docker-6-Passing.png" width="1000" height="700">
 
 
 
 ### Docker-6-Add-Extra-Tests: Add extra tests.
 
-<img src="https://github.com/khawla-k-banydomi/schedulerapiCE/blob/main/doc/Docker-6-Tests1.png" width="1000" height="700">
+<img src="https://github.com/khawla-k-banydomi/schedulerapi/blob/main/doc/Docker-6-Tests1.png" width="1000" height="700">
 
 
 ### Docker-6-Total-with-addition-tests: The total number of passing tests.
 
-<img src="https://github.com/khawla-k-banydomi/schedulerapiCE/blob/main/doc/Docker-6-Totalerr.png" width="1000" height="700">
+<img src="https://github.com/khawla-k-banydomi/schedulerapi/blob/main/doc/Docker-6-Totalerr.png" width="1000" height="700">
 
 
 
 ## The completion of the project:
 This is the last miletsone in which the server as well the data-base are running and manipulate the tests using : Docker-compose up command.
 
-## [The completion of the milestone](https://github.com/khawla-k-banydomi/schedulerapiCE/milestone/9)
+## [The completion of the milestone](https://github.com/khawla-k-banydomi/schedulerapi/milestone/9)
+
+
+
 
